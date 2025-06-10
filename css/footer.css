@@ -1,0 +1,30 @@
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #888;
+    background: #1d1d1d;
+
+
+}
+
+
+.socials-address-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap: 1rem;
+}
+
+.socials-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    gap: 1rem;
+    width: 30vw;
+}
+.location{
+    width: 30vw;
+}
+
+.footer-div{
+    background: #e1e1e1;
+}
