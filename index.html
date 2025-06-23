@@ -8,88 +8,369 @@
     <link rel="stylesheet" href="/css/main_style.css">
     <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/seasonal_offer.css">
+    <link rel="stylesheet" href="/css/cta_button.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
+
+    <script src="/script/sticky_nav.js" defer></script>
+    <script src="/script/static_nav_hamburger.js" defer></script>
 
     <style>
 
     </style>
 </head>
-<body>
 
-    <nav>
-        <a href="#">Domov</a>
-        <a href="/unisem_shop.html">Obchod</a>
-        <a href="/vvm_store.html">Veľkosklad</a>
-        <a href="/about_us.html">O nás</a>
+<body>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+
+
+
+    <header class="static-nav">
+        <nav class="nav-wrapper">
+
+            <div class="nav-left">
+            <ul>
+                <li id="logo"><img src="/images/logo_flower_white.png" alt=""></li>
+                <li id="nav-header"><a href="#">Unisem</a></li>
+            </ul>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+
+            <div class="nav-right" id="nav-menu">
+            <ul>
+                <li><a href="#"> <b>Domov</b></a></li>
+                <li><a href="/unisem_shop.html"> <b> Garden centrum </b></a></li>
+                <li><a href="/vvm_store.html"> <b>Veľkosklad ovocia a zeleniny </b></a></li>
+                <li><a href="/about_us.html"><b>O nás </b></a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <nav class="sticky-nav hidden">
+    <div class="nav-wrapper">
+
+        <div class="nav-left">
+            <ul>
+                <li id="logo"><img src="/images/logo_flower_white.png" alt=""></li>
+                <li id="nav-header"><a href="#">Unisem</a></li>
+            </ul>
+        </div>
+
+
+        <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        </div>
+
+        <div class="nav-right" >
+            <ul>
+                <li><a href="#">Domov</a></li>
+                <li><a href="/unisem_shop.html">Obchod</a></li>
+                <li><a href="/vvm_store.html">Veľkosklad</a></li>
+                <li><a href="/about_us.html">O nás</a></li>
+            </ul>
+        </div>
+    </div>
     </nav>
 
-    <img id="title_img" src="/images/oranges-apples.jpg" alt="">
 
-    <img id="main_logo" src="/images/logo_flower_white.png" alt="">
+    <main>
 
+    
+        <div class="hero" >
+            <div id="hero-content">
 
-    <h1 id="main_title">Unisem</h1>
-    <h3 id="subtitle">Veľkosklad ovovcia, zeleniny a všetko pre vašu záhradku</h3>
+                <h1 id="main_title" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-out">
+                <b>Čerstvé ovocie, zelenina <br> 
+                    a všetko pre vašu záhradu.</b> <br>
+                    Sme váš spoľahlivý partner <br> 
+                    už od roku 1984.</h1>
 
-    <section id="unisem" class="unisem_shop">
-        <h3>UNISEM Garden centrum</h3>
-        <h4>Záhradkárske potreby a dekorácie</h4>
-        <img class="article-img" src="/images/shop_ext.jpg" alt=""> <br>
-        <a href="/unisem_shop.html">
-            <button class="unisem_shop_web">Navštíviť obchod</button>
-        </a>
-        
-    </section>
-
-    <section id="vvm" class="vvm_store">
-        <h3>VVM obchodná</h3>
-        <h4>Veľkosklad ovocia a zeleniny</h4>
-        <img class="article-img"  src="/images/img3.png" alt=""> <br>
-        <a href="/vvm_store.html">
-            <button class="vvm_store_web">Zobraziť ponuku</button>
-
-        </a>
-    </section>
+            </div>
 
 
+        </div>
+
+
+       
+
+
+        <section id="unisem" class="main-section" data-aos="fade-left">
+
+
+            <div class="img-container">
+                <img class="article-img" src="/images/shop_ext-7-5.jpg" alt="">
+            </div>
+
+            <div class="text-container">
+                <h3 class="section-h3">UNISEM Garden centrum</h3>
+                <h4>Záhradkárske potreby a dekorácie</h4>
+
+                <p>
+                    Otváracie hodiny: <br>
+                    Pondelok - Piatok: 8:00 - 18:00 <br>
+                    Sobota: 8:00 - 12:00 <br>
+                    
+                </p>  
+                
+                <div class="button-container">
+                    <a href="/unisem_shop.html">
+                        <!-- From Uiverse.io by Creatlydev --> 
+                        <button href="#" class="button" style="--clr: #7808d0">
+                            Zistite viac
+                        <span class="button__icon-wrapper">
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg"
+                            width="10"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg button__icon-svg--copy"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+                        </span>
+                        
+                        </button>
+
+                    </a>
+                </div>
+
+            </div>
+
+            
+        </section>
+
+        <section id="vvm" class="main-section" data-aos="fade-right">
+            
+            <div class="img-container">
+                <img class="article-img"  src="/images/img3.png" alt=""> <br>
+            </div>
+
+            <div class="text-container">
+                <h3 class="section-h3">VVM obchodná</h3>
+                <h4>Veľkosklad ovocia a zeleniny</h4>
+                
+                <p>
+                    Široký sortiment kvalitnej zeleniny a ovocia,
+                     od overených dodávateľov. Denne dovážame tovar až k dverám vášho podniku.
+                </p>
+
+                <div class="button-container">
+                    <a href="/vvm_store.html">
+                        <!-- From Uiverse.io by Creatlydev --> 
+                        <button href="#" class="button" style="--clr: #7808d0">
+                            Zistite viac
+                        <span class="button__icon-wrapper">
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg"
+                            width="10"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg button__icon-svg--copy"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+                        </span>
+                        
+                        </button>
+
+                    </a>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <article class="seasonal-offer-container" >
+
+            <div class="seasonal-offer-div">
+                <i class="fa-solid fa-building-wheat"></i>
+                <h4 class="seasonal-offer-h4"> Dlhoročná tradícia</h4>
+            </div>
+
+            <div class="seasonal-offer-div">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4 class="seasonal-offer-h4">Spoľahlivý dovoz</h4>
+            </div>
+
+            <div class="seasonal-offer-div">
+                <i class="fa-solid fa-people-group"></i>
+                <h4 class="seasonal-offer-h4">Ochotný personál</h4>
+            </div>
+
+            <div class="seasonal-offer-div">
+                <i class="fa-solid fa-medal"></i>
+                <h4 class="seasonal-offer-h4">Prémiový tovar</h4>
+            </div>
 
 
 
 
+        </article>
+
+
+        <section class="about-us-container">
+
+
+            <div class="about-us-img1">
+                <div class="img-container">
+                    <img src="/images/flowers_img3.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="about-us-content">
+                <h3>Kto sme?</h3>
+
+                <p>
+                    Sme rodinná firma ktorá sa venuje predaju a rozvozu ovocia a zeleniny. Taktiež prevádzkujeme obchod so záhradkárskymi potrebami
+                </p>
+
+                <div class="button-container">
+                    <a href="/vvm_store.html">
+                        <!-- From Uiverse.io by Creatlydev --> 
+                        <button href="#" class="button" style="--clr: #7808d0">
+                            Prečítajte si viac
+                        <span class="button__icon-wrapper">
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg"
+                            width="10"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+
+                            <svg
+                            viewBox="0 0 14 15"
+                            fill="none"
+                            width="10"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="button__icon-svg button__icon-svg--copy"
+                            >
+                            <path
+                                d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                fill="currentColor"
+                            ></path>
+                            </svg>
+                        </span>
+                        
+                        </button>
+
+                    </a>
+                </div>
+
+
+            </div>
+
+
+            <div class="about-us-img2">
+                <div class="img-container">
+                    <img src="/images/vege1.jpg" alt="">
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
 
     <footer>
-        <div class="socials-address-container"> 
-            <section class="socials footer-div">
+        <div class="socials-nav-container"> 
+            <div class="socials footer-div">
                 <h3>Sledujte nás aj na sociálnych sieťach</h3>
                 <div class="socials-container">
-                    <section class="facebook">
-                        <i class="fa-brands fa-square-facebook"></i>
-                    </section>
-                    <section class="instagram">
-                        <i class="fa-brands fa-instagram"></i>
-            
-                    </section>
+                    <a href=""> <i class="fa-brands fa-square-facebook"></i> </a>
+                    
+                    <a href="">  <i class="fa-brands fa-instagram"></i> </a>
+                    
+        
                 </div>
  
-            </section>
+            </div>
 
-            <section class="location footer-div">
-                <h3>Kde nás nájdete</h3>
-                <p>Teplická 2587 56 <br> 921 01 Piešťany</p>
-                <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14822.37921374284!2d17.815067898278148!3d48.59273021115032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b548ef782af85%3A0x98bdf70b4058132c!2sUNISEM%20-%20VVM%20Obchodn%C3%A1%20s.r.o!5e1!3m2!1sen!2ssk!4v1748020658647!5m2!1sen!2ssk" 
-                    width="240" 
-                    height="120" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </p>
-            </section>
+            <div class="navigation footer-div">
+
+                <div class="nav-div">
+                    <a href="/unisem_shop.html"> <h3>Unisem - Záhradkárske potreby</h3> </a>
+                    <a href="/unisem_shop.html"><p>Sezónna ponuka</p> </a>
+                    <a href="/unisem_shop.html"> <p>Kontakt</p> </a> 
+                    <a href="/unisem_shop.html"> <p>Fotogaléria</p> </a>        
+                </div>
+
+                <div class="nav-div">
+                    <a href="/vvm_store.html"> <h3>Veľkoobchod ovocia a zeleniny</h3> </a>
+                    <a href="/vvm_store.html"> <p>Ponuka</p> </a>
+                    <a href="/vvm_store.html"> <p>Kontakt</p> </a> 
+                    <a href="/vvm_store.html"> <p>Fotogaléria</p> </a>  
+                </div>
+
+                <div class="nav-div">
+                    <a href="/about_us.html"> <h3>O nás</h3> </a>
+                    <a href="/about_us.html"> <p>Naša história</p> </a>
+                    <a href="/about_us.html"> <p>Fotky</p></a>
+                </div>
+
+
+            </div>
         </div>
 
         <br>

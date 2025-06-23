@@ -1,5 +1,5 @@
 
-
+/*
 nav {
     background: #1d1d1d;
     color: white;
@@ -12,4 +12,209 @@ nav a {
     margin: 0 1rem;
     text-decoration: none;
     font-weight: bold;
+}*/
+
+
+:root {
+    --green: #40a829;
+    --white: #ffffff;
+    --dark-bg: #0a0a0a;
 }
+
+
+.static-nav {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.532);
+  border-radius: 15px;
+  backdrop-filter: blur(1px);     /* rozmazanie pozadia */
+  -webkit-backdrop-filter: blur(1px);
+}
+
+.static-nav img{
+  max-width: 40px; 
+  height: auto;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left ul,
+.nav-right ul {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  margin: 0;
+  padding: 0;
+  /*padding-right: 8rem;*/
+  align-items: center;
+}
+
+.nav-left ul{
+  gap: 0.5rem;
+}
+
+.static-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+
+
+.static-nav li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.static-nav li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+#nav-header a {
+  font-family: 'Pacifico';
+  font-size: 2rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobilná verzia */
+@media (max-width: 1000px) {
+  .nav-right {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-right ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Schovať textové logo na mobile, ak chceš */
+  #nav-header {
+    display: none;
+  }
+}
+
+/* -----  sticky nav -----------*/
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.658);
+  padding: 1rem 2rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: 999;
+}
+
+.sticky-nav.show {
+  transform: translateY(0);
+}
+
+.sticky-nav .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky-nav .nav-left ul,
+.sticky-nav .nav-right ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.sticky-nav .nav-left ul {
+  gap: 0.5rem;
+}
+
+.sticky-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.sticky-nav li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.sticky-nav li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+#nav-header a {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sticky-nav img {
+  max-width: 40px;
+  height: auto;
+}
+

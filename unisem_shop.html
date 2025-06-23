@@ -2,144 +2,304 @@
 <html lang="sk">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UNISEM obchod</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNISEM obchod</title>
 
-  <link rel="stylesheet" href="/css/main_style.css">
-  <link rel="stylesheet" href="/css/navbar.css">
-  <link rel="stylesheet" href="/css/shop.css">
-  <link rel="stylesheet" href="/css/slideshow.css">
+    <link rel="stylesheet" href="/css/main_style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/footer.css">
 
-  <script src="/script/auto_slideshow.js" defer></script>
-  <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
+
+    <script src="/script/static_nav_hamburger.js" defer></script>
+    <script src="/script/sticky_nav.js" defer></script>
+    <script src="/script/auto_slideshow.js" defer></script>
+    <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
 
 </head>
 
 <body>
 
-  <nav>
-    <a href="/index.html">Domov</a>
-    <a href="/unisem_shop.html">Obchod</a>
-    <a href="/vvm_store.html">Veľkosklad</a>
-    <a href="/about_us.html">O nás</a>
-    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-  </nav>
-
-  <img id="shop-title-img" src="/images/ext.png" alt="">
-  <h1>Unisem Garden centrum</h1>
-
-  <section class="shop-section">
-    <h2>Všetko pre vašu záhradu</h2>
-
-    <h3>Čo ponúkame?</h3>
-    <ul>
-      <li>Záhradné náradie</li>
-      <li>Kvetináče, substráty</li>
-      <li>Hnojivá, osivá</li>
-      <li>Sezónne dekorácie</li>
-    </ul>
-  </section>
-
-
-  <section class="shop-section">
-
-    <h3>Sezónna ponuka</h3>
-    <p>Po celý rok ponúkame sezónny tovar, od vianočných stromčekov po letné kvetiny.</p>
-
-    <div class="slideshow-container">
-
-      <div class="mySlides fade">
-        <div class="numbertext">1 / 3</div>
-        <img src="/images/winter7.png" style="width:100%">
-        <div class="text">Vianočné stromčeky každé vianoce</div>
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">2 / 3</div>
-        <img src="/images/spring.png" style="width:100%">
-        <div class="text">Priesadky ovocia, zeleniny, kvetov a byliniek</div>
-      </div>
-
-      <div class="mySlides fade">
-        <div class="numbertext">3 / 3</div>
-        <img src="/images/autmn.png" style="width:100%">
-        <div class="text">Každú jeseň kvalitná kapusta do súdka</div>
-      </div>
-
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-
-    <div style="text-align:center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
+    <script>AOS.init();</script>
 
 
 
-  </section>
+    <header class="static-nav">
+        <nav class="nav-wrapper">
+
+            <div class="nav-left">
+            <ul>
+                <li id="logo"><img src="/images/logo_flower_white.png" alt=""></li>
+                <li id="nav-header"><a href="#">Unisem</a></li>
+            </ul>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+
+            <div class="nav-right" id="nav-menu">
+            <ul>
+                <li><a href="/index.html"> <b>Domov</b></a></li>
+                <li><a href="/unisem_shop.html"> <b> Garden centrum </b></a></li>
+                <li><a href="/vvm_store.html"> <b>Veľkosklad ovocia a zeleniny </b></a></li>
+                <li><a href="/about_us.html"><b>O nás </b></a></li>
+            </ul>
+            </div>
+        </nav>
+    </header>
 
 
-  <section>
-    <h3>Otváracie hodiny</h3>
-    <p>Po–Pia: 8:00 – 17:00</p>
-    <p>So: 9:00 – 12:00</p>
-    <p>Ne: zatvorené</p>
-  </section>
+    <nav class="sticky-nav hidden">
+        <div class="nav-wrapper">
 
-  <section>
-    <h3>Kontakt</h3>
-    <p>Telefón: +421 900 000 111</p>
-    <p>Email: biznis@unisem.sk</p>
-  </section>
+            <div class="nav-left">
+                <ul>
+                    <li id="logo"><img src="/images/logo_flower_white.png" alt=""></li>
+                    <li id="nav-header"><a href="#">Unisem</a></li>
+                </ul>
+            </div>
 
 
-  <section>
-    <h3>Fotogaléria</h3>
-    <img src="shop-example.jpg" alt="Ukážka obchodu">
-  </section>
+            <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
 
-  <section>
-    <h3>Kde nás nájdete</h3>
-    <p>Teplická 2587 56, 921 01 Piešťany</p>
-    <p><iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12204.82985638496!2d17.815839464445823!3d48.59112945439518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b55269500386f%3A0x2a57bcdc8d2e4fa8!2zWsOhaHJhZGvDoXJza2UgcG90cmVieSBVbmlzZW0gUGllxaHFpWFueQ!5e1!3m2!1sen!2ssk!4v1748020339975!5m2!1sen!2ssk"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe></p>
-  </section>
+            <div class="nav-right" >
+                <ul>
+                    <li><a href="#">Domov</a></li>
+                    <li><a href="/unisem_shop.html">Obchod</a></li>
+                    <li><a href="/vvm_store.html">Veľkosklad</a></li>
+                    <li><a href="/about_us.html">O nás</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+
+    
+        <div class="hero" id="shop-hero">
+            <div id="hero-content">
+
+                <h1 id="main_title" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-out">
+                <b>Kompletný sortiment pre <br>
+                   milovníkov záhrad. </b> <br> 
+                  Náradie, výsadba, sezónne dekorácie a doplnky.</h1>
+
+            </div>
+
+
+        </div>
+
+
+       
+        <section id="shop-offer">
+
+
+
+            <div id="offer-img-1">
+                <div class="img-container">
+                    <img src="/images/flowers_img3.png" alt="">
+                </div>
+            </div>
+
+            
+            <div id="offer-content">
+                <h3>Čo ponúkame?</h3>
+
+                <ul>
+                    <li>Záhradné náradie a pomôcky</li>
+                    <li>Kvetináče, substráty a hnojivá</li>
+                    <li>Osivá a sadenice</li>
+                    <li>Sezónne dekorácie a doplnky</li>
+                </ul>
+            </div>
+
+            <div id="offer-img-2">
+                <div class="img-container">
+                    <img src="/images/flowers_img-w.png" alt="">
+                </div>
+                <div class="img-container">
+                    <img src="/images/sem.png" alt="">
+                </div>
+            </div>
+
+      </section>
+
+
+
+        <div class="seasonal-offer-grid">
+
+            <!-- seasonal-header -->
+            <div class="item text offer-text"><h3>Počas celého roka pre vás máme pripravenú sezónnu ponuku </h3></div>
+
+            <!-- img1 -->
+            <div class="item img1"><img src="/images/flower4.png" alt="img1" /></div>
+
+            <!-- img2 -->
+            <div class="item text1 offer-text">                
+                    Na jar ponúkame priesadky ovocia a zeleniny,
+                    aj sezónne kvety. V lete doplníte záhradu o kvitnúce rastliny a dekorácie.
+            </div>
+
+            <!-- img3 -->
+            <div class="item img3"><img src="/images/flowers_img4-e.png" alt="img3" /></div>
+
+            <!-- img4 -->
+            <div class="item img4"><img src="/images/flowerssss.jpg" alt="img4" /></div>
+
+            <!-- text2 -->
+            <div class="item text2 offer-text">
+            Na jeseň u nás nájdete rezanú kapustu na kvasenie,
+                svietniky a vence na dušičky. Počas vianočných sviatok u nás nájdete široký sortiment vianočných dekorácií,
+                a taktiež živé vianočné stromčeky.
+
+
+            </div>
+
+            <!-- img5 -->
+            <div class="item img5"><img src="/images/flowers256-e.jpg" alt="img5" /></div>
+
+            <!-- text3 -->
+            <a href="/about_us.html" class="item text3 offer-text">
+                <strong>Pozrite si viac v našej galérií 
+                 </strong> 
+            </a>
+
+            <!-- img6 -->
+            <div class="item img6"><img src="/images/nov2.png" alt="img6" /></div>
+
+            <!-- img7 -->
+            <div class="item img7"><img src="/images/winter7-e.png" alt="img7" /></div>
+
+            <!-- img9 -->
+            <div class="item img9"><img src="/images/xmas-e.png" alt="img9" /></div>
+
+        </div>
+
+
+
+        <section class="contact-section">
+            <div>
+                <h2>Kontaktujte nás</h2>
+                <h4>Unisem Garden Centrum - Záhradkárske potreby</h4>
+            </div>
+
+            <div id="contact-content">
+
+                <article>
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h3>Fakturačné údaje</h3>
+                    </div>
+                    
+                    <p><strong> VVM - obchodná s.r.o.  </strong> <br>
+                        Teplická 2587 56, <br>
+                        921 01 Piešťany <br>
+                        IČO: 12345678 <br>
+                        DIČ: 98764321</p>
+                </article>
+
+
+                <article>
+                    <div>
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <h3>Kontakt</h3>
+                    </div>
+                    
+                    <p> <strong>Tel. číslo:</strong> <br>
+                        0940 885 123 <br>
+                        <strong>Email:</strong>  <br>
+                        info@unisem.sk</p>
+                </article>
+
+                <article>
+                    <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <h3>Otváracie hodiny</h3>
+                    </div>
+                    
+                    <p>Po–Pia: 8:00 – 17:00 <br>
+                        So: 9:00 – 12:00 <br>
+                        </p>
+                </article>
+                
+                
+
+            </div>
+
+
+            <div id="map">
+                <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12204.82985638496!2d17.815839464445823!3d48.59112945439518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b55269500386f%3A0x2a57bcdc8d2e4fa8!2zWsOhaHJhZGvDoXJza2UgcG90cmVieSBVbmlzZW0gUGllxaHFpWFueQ!5e1!3m2!1sen!2ssk!4v1748020339975!5m2!1sen!2ssk"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+
+
+  </main>
 
 
   <footer>
-    <div class="socials-address-container">
-      <section class="socials">
-        <h3>Sledujte nás aj na sociálnych sieťach</h3>
-        <div class="socials-container">
-          <section class="facebook">
-            <i class="fa-brands fa-square-facebook"></i>
-          </section>
-          <section class="instagram">
-            <i class="fa-brands fa-instagram"></i>
+        <div class="socials-nav-container"> 
+            <div class="socials footer-div">
+                <h3>Sledujte nás aj na sociálnych sieťach</h3>
+                <div class="socials-container">
+                    <a href=""> <i class="fa-brands fa-square-facebook"></i> </a>
+                    
+                    <a href="">  <i class="fa-brands fa-instagram"></i> </a>
+                    
+        
+                </div>
+ 
+            </div>
 
-          </section>
+            <div class="navigation footer-div">
+
+                <div class="nav-div">
+                    <a href="/unisem_shop.html"> <h3>Unisem - Záhradkárske potreby</h3> </a>
+                    <a href="/unisem_shop.html"><p>Sezónna ponuka</p> </a>
+                    <a href="/unisem_shop.html"> <p>Kontakt</p> </a> 
+                    <a href="/unisem_shop.html"> <p>Fotogaléria</p> </a>        
+                </div>
+
+                <div class="nav-div">
+                    <a href="/vvm_store.html"> <h3>Veľkoobchod ovocia a zeleniny</h3> </a>
+                    <a href="/vvm_store.html"> <p>Ponuka</p> </a>
+                    <a href="/vvm_store.html"> <p>Kontakt</p> </a> 
+                    <a href="/vvm_store.html"> <p>Fotogaléria</p> </a>  
+                </div>
+
+                <div class="nav-div">
+                    <a href="/about_us.html"> <h3>O nás</h3> </a>
+                    <a href="/about_us.html"> <p>Naša história</p> </a>
+                    <a href="/about_us.html"> <p>Fotky</p></a>
+                </div>
+
+
+            </div>
         </div>
 
-      </section>
+        <br>
 
-      <section class="location">
-        <h3>Kde nás nájdete</h3>
-        <p>Teplická 2587 56 <br> 921 01 Piešťany</p>
-      </section>
-    </div>
+        &copy; 2025 UNISEM. Všetky práva vyhradené.
 
-    <br>
-
-    &copy; 2025 UNISEM. Všetky práva vyhradené.
-
-  </footer>
+    </footer>
+     
 
 
 </body>

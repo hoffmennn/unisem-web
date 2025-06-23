@@ -1,30 +1,128 @@
-footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    font-size: 0.9rem;
-    color: #888;
-    background: #1d1d1d;
-
+:root {
+  --color-bg-dark: #111;
+  --color-text-light: #fff;
+  --color-accent-green: #4caf50;
+  --color-text-grey: #adadad;
 
 }
 
+footer {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  padding: 2rem 1rem;
+  font-family: sans-serif;
+}
 
-.socials-address-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
-    gap: 1rem;
+footer a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--color-accent-green);
+}
+
+footer h3:hover {
+  color: var(--color-accent-green);
+}
+
+footer h3 {
+  color: var(--color-text-grey);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+.socials-nav-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.footer-div {
+  flex: 1 1 300px;
 }
 
 .socials-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
-    gap: 1rem;
-    width: 30vw;
-}
-.location{
-    width: 30vw;
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-.footer-div{
-    background: #e1e1e1;
+.socials-container i {
+  font-size: 2rem;
+  transition: transform 0.3s;
+}
+
+.socials-container i:hover {
+  transform: scale(1.2);
+  color: var(--color-accent-green);
+}
+
+.navigation {
+  display: flex;
+  gap: 2rem;
+  flex: 4;
+  flex-wrap: wrap;
+}
+
+.nav-div {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+footer > br + * {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .socials-nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-div {
+    width: 100%;
+    align-items: center;
+  }
+
+  .socials-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer h3 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .nav-div p {
+    font-size: 0.9rem;
+  }
+
+  .socials-container i {
+    font-size: 1.8rem;
+  }
 }
