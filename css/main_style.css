@@ -8,6 +8,21 @@
   --white: #ffffff;
   --body-white-bg: #f9f9f9;
   --light-grey: #e7e7e7;
+  --dark-grey: #232323;
+
+
+    --clr-section-bg: #f4f5f6;       /* svetlo-sivé pozadie celej sekcie */
+    --clr-card-bg:    #c9ffca;       /* zelený štvorec */
+    --clr-card-icon:  #a5f4a5;       /* o tón tmavší kruh za ikonou     */
+    --clr-accent:     #24a64a;       /* tlačidlo + ikonky               */
+    --clr-text:       #000000;
+
+
+      --overlay-dark: rgba(0, 0, 0, 0.4);
+      --button-bg: rgba(255, 255, 255, 0.2);
+      --button-hover-bg: #3ea867;
+      --button-text: white;
+      --transition: all 0.4s ease;
 }
 
 * {
@@ -25,7 +40,7 @@ a {
 body {
     font-family: sans-serif;
     line-height: 1.6;
-    background-color: var(--body-white-bg);
+    background-color: var(--light-bg);
     color: #333;
     padding: 0;
     margin: 0;
@@ -84,6 +99,119 @@ body {
     
 }
 
+/*
+------------------seee
+*/
+.main-div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 4rem auto;
+  max-width: 1200px;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  z-index: 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.421);
+}
+
+/* Dynamický obrázok cez ::before */
+.main-div::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: var(--bg-image);
+  transform: scale(1);
+  transition: transform 0.5s ease, background 0.4s ease;
+  z-index: 0;
+}
+
+/* Hover efekt – iba zväčší obrázok a stmaví */
+.main-div:hover::before {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Prekrytie tmavého filtra */
+.main-div::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.026);
+  z-index: 1;
+  transition: background 0.4s ease;
+}
+
+.main-div:hover::after {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Obsah */
+.main-container {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  padding: 3rem;
+  margin: 0 auto;
+}
+
+.main-container h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.main-container h4 {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.main-container p {
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+.main-cta-button {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border: none;
+  padding: 1rem 2.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  width: fit-content;
+}
+
+.main-div:hover .main-cta-button {
+  background-color: #2da647;
+  color: white;
+}
+
+/* Mobilné prispôsobenie */
+@media (max-width: 768px) {
+  .main-div {
+    margin: 1.5rem 1rem;
+    padding: 1.75rem 1.25rem;
+  }
+
+  .main-container {
+    max-width: 100%;
+  }
+}
+
 
 /* 
 --------------- Sections for Unisem / VVM  ---------------
@@ -99,7 +227,8 @@ h4 {
 }
 
 .main-section {
-    background: rgb(231, 231, 231);
+    /*background: rgb(231, 231, 231);*/
+    background: var(--body-white-bg);
     margin: 5rem auto;
     padding: 1.5rem;
     border-radius: 10px;
@@ -160,67 +289,161 @@ h4 {
 
 
 
+
 /*
----------------- About us section ----------------
+------------------ about us --------------
 */
 
 
-.about-us-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  max-width: 1000px;
-  margin: 2rem auto;
-  background-color:var(--light-grey);
 
+.about-us-section{
+    background: var(--body-white-bg);
+    padding: 3.5rem 1.5rem;
+    border-radius: 1rem;
+    display: grid;                 
+    grid-template-areas:
+        "title"
+        "text"
+        "icons";
+    gap: 2rem;
+    max-width: 75rem;
+    margin: 1rem auto;                 
 }
 
-.about-us-container h3 {
-    font-size: 2rem;
+
+.about-us-section > h2{
+    grid-area: title;
+    text-align: center;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin: 0;
 }
 
-.about-us-img1,
-.about-us-img2 {
-  width: 100%;
-  height: 100%;
-}
 
-.img-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.about-us-content {
-  display: flex;
-  flex-direction: column;
-    justify-content:flex-start;
-  
-}
-
-/* Mobilné zobrazenie */
-@media (max-width: 768px) {
-  .about-us-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .about-us-content {
-    order: 1;
-  }
-
-  .about-us-img1,
-  .about-us-img2 {
-    order: 2;
+.about-us-text{
+    grid-area: text;
+    max-width: 32rem;
     display: flex;
-    height: 200px; /* alebo iná pevná výška podľa potreby */
-  }
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.about-us-text h4{
+    font-size: 1.5rem;
+    color: var(--clr-text);
+    font-weight: 700;
+    margin: 0;
+}
+
+.about-us-text p{
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+.about-us-text button{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: var(--clr-accent);
+    color: #fff;
+    border: none;
+    padding: .75rem 1.75rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background .2s;
+    max-width: 50%;
+    margin: 0 auto; /* center the button */
+}
+.about-us-text button:hover{
+    background: #1d8d3f; /* o tón tmavší */
+}
+
+
+
+
+
+.about-us-icons{
+    grid-area: icons;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(8rem, 1fr)); /* vždy 2 stĺpce */
+    gap: 1.5rem 2rem;
+}
+
+.about-us-item{
+    position: relative;
+    background: var(--clr-card-bg);
+    border-radius: .75rem;
+    padding: 2.0rem 1.25rem 1.25rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/*  – veľké číslo */
+.about-us-item .number{
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 .5rem 0;
+    line-height: 1;
+}
+
+/*  – text pod číslom */
+.about-us-item .description{
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0;
+    max-width: 10rem;
+}
+
+/*  – ikona v pravom hornom rohu */
+.about-us-item .icon{
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    color: var(--green);
+    background: var(--clr-card-icon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* vypneme defaultné marginy <p> v ikonách */
+.about-us-item .icon,
+.about-us-item .number,
+.about-us-item .description{
+    color: var(--clr-text);
+}
+
+/* ===================== */
+/*  Desktop (≥ 768 px)   */
+/* ===================== */
+@media (min-width: 768px){
+    .about-us-section{
+        grid-template-areas:
+            "title  title"
+            "icons  text";
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    /* trošku väčší odstup medzi stĺpcami */
+    .about-us-section{
+        column-gap: 3.5rem;
+    }
+
+    /* ikonové karty naľavo, text napravo */
+    .about-us-icons{
+        justify-self: center;
+    }
+
+    .about-us-text{
+        justify-self: start;
+    }
 }
