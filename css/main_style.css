@@ -130,6 +130,9 @@ body {
   z-index: 0;
 }
 
+.bg-gardencentrum   { --bg-image: url('../images/gardencentrum-hero.jpg'); }
+.bg-vvm             { --bg-image: url('../images/vvm-hero.jpg'); }
+
 /* Hover efekt – iba zväčší obrázok a stmaví */
 .main-div:hover::before {
   transform: scale(1.05);
