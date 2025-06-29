@@ -15,6 +15,7 @@
     <script src="script/static_nav_hamburger.js" defer></script>
     <script src="script/sticky_nav.js" defer></script>
     <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
+    
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
@@ -102,78 +103,25 @@
 
         </div>
 
-        <section class="main-offer">
-            <div class="offer-wrapper">
-                <div class="offer-item">
-                    <img src="images/flowers_img3.png" alt="">
-                    <div class="offer-text-container">
-                        Priesadky
-                    </div>
+        <section class="carusel-offer">
+            <h2>
+                Naša ponuka
+            </h2>
+
+            <div class="gallery" id="gallery">
+                <div class="slides" id="slides">
+                <!-- 5 slide items -->
+                <div class="slide"><img src="images/flowers_img3.png" alt="Popis 1"><p>Popis 1</p></div>
+                <div class="slide"><img src="images/flowers-carusel.jpg" alt="Popis 2"><p>Popis 2</p></div>
+                <div class="slide"><img src="images/semm.jpg" alt="Popis 3"><p>Popis 3</p></div>
+                <div class="slide"><img src="images/tools.jpg" alt="Popis 4"><p>Popis 4</p></div>
+                <div class="slide"><img src="images/deco2.png" alt="Popis 5"><p>Popis 5</p></div>
                 </div>
-
-                <div class="offer-item">
-                    <img src="images/semm.jpg" alt="">
-                    <div class="offer-text-container">
-                        Kvalitné osivá
-                    </div>                     
-                </div>
-
-
-                <div class="offer-item">
-                    <img src="images/flowers_img.png" alt="">
-                    <div class="offer-text-container">
-                        Kvitnúce rastliny
-                    </div>
-                </div>
-
-
-                <div class="offer-item">
-                    <img src="images/tools.jpg" alt="">
-                    <div class="offer-text-container">
-                        <b>A ešte oveľa viac</b>
-                        <ul>
-                            <li>Náradie</li>
-                            <li>Dekorácie</li>
-                            <li>Množstvo sezónnej ponuky</li>
-                        </ul>
-                    </div>
-                </div>
-
+                <div class="dots" id="dots"></div>
             </div>
         </section>
-       
-        <section id="shop-offer">
 
-
-
-            <div id="offer-img-1">
-                <div class="img-container">
-                    <img src="images/flowers_img3.png" alt="">
-                </div>
-            </div>
-
-            
-            <div id="offer-content">
-                <h3>Čo ponúkame?</h3>
-
-                <ul>
-                    <li>Záhradné náradie a pomôcky</li>
-                    <li>Kvetináče, substráty a hnojivá</li>
-                    <li>Osivá a sadenice</li>
-                    <li>Sezónne dekorácie a doplnky</li>
-                </ul>
-            </div>
-
-            <div id="offer-img-2">
-                <div class="img-container">
-                    <img src="images/flowers_img-w.png" alt="">
-                </div>
-                <div class="img-container">
-                    <img src="images/sem.png" alt="">
-                </div>
-            </div>
-
-      </section>
+    
 
 
 
@@ -187,8 +135,7 @@
 
             <!-- img2 -->
             <div class="item text1 offer-text">                
-                    Na jar ponúkame priesadky ovocia a zeleniny,
-                    aj sezónne kvety. V lete doplníte záhradu o kvitnúce rastliny a dekorácie.
+                    Jar u nás začína priesadkami a kvetmi, leto pokračuje vôňou rozkvitnutej záhrady.
             </div>
 
             <!-- img3 -->
@@ -343,7 +290,7 @@
     </footer>
      
 
-
+    <script src="script/carusel.js" defer></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 :root {
   --green: #368b23;
+  --light-green:  #bef8bf;       /* o tón tmavší kruh za ikonou     */
   --white: #ffffff;
   --body-white-bg: #f9f9f9;
   --light-grey: #e7e7e7;
@@ -28,147 +29,71 @@
 /*
 ------- ofer
 */
+.gallery, .gallery * { box-sizing: border-box; }
 
-.main-offer {
-    padding: 2rem;
-}
-
-.offer-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
-}
-
-.offer-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.offer-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.offer-item:hover img {
-    transform: scale(1.05);
-}
-
-.offer-text-container {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: linear-gradient(
-        to top,
-        rgba(0, 128, 0, 0.7) 0px,
-        rgba(0, 128, 0, 0.7) 40px,
-        rgba(0, 128, 0, 0) 80px
-    );
-    color: white;
-    padding: 1rem;
-    font-size: 1rem;
-}
-
-
-/* Responzívny grid pre menšie obrazovky (napr. mobily/tablety) */
-@media (max-width: 768px) {
-    .offer-wrapper {
-        grid-template-columns: repeat(2, 1fr);
+    /* Obal galérie */
+    .gallery {
+      margin: 0 auto;
+      max-width: 900px;
+      overflow: hidden;
+      position: relative;
     }
-}
 
+    /* Pole slidov */
+    .gallery .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
 
+    /* Jeden slide */
+    .gallery .slide {
+      background-color: #c2ffc2;
+      border-radius: 8px;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 10px;
+    }
+    .gallery .slide img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+    .gallery .slide p {
+      margin: 8px 0 0;
+      font-weight: bold;
+    }
 
+    /* Guľôčky */
+    .gallery .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .gallery .dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #007f00;
+      opacity: 0.3;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .gallery .dot.active { opacity: 1; }
 
+    /* Desktop: 3 slide-ov na obrazovku */
+    @media (min-width: 769px) {
+      .gallery .slide {
+        width: calc((100% - 40px) / 3);
+        margin-right: 20px;
+      }
+      .gallery .slide:last-child { margin-right: 0; }
+    }
 
-/*
------------------- shop offer section ------------------
-
-.article-img {
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0px;
-    
-}
-
-.article-img:hover {
-    transform: scale(1.04);
-}
-
-*/
-
-#shop-offer {
-  display: grid;
-  grid-template-columns: 1fr; /* mobil default */
-  gap: 2rem;
-  padding: 2rem;
-
-  margin: 2rem auto;
-  padding: 1.5rem;
-  border-radius: 0px;
-  max-width:70vw;
-}
-
-#shop-offer img {
-    transition: transform 0.3s ease;
-
-}
-
-#shop-offer img:hover {
-    transform: scale(1.04);
-
-
-}
-
-
-/* Desktop verzia: 3 stĺpce */
-@media (min-width: 768px) {
-  #shop-offer {
-    grid-template-columns: 1fr 1.5fr 1.5fr;
-    align-items: start;
-    gap: 0;
-  }
-}
-
-/* Štýl pre textovú časť */
-#offer-content {
-  background-color: #e5e5e5;
-  height: 100%;
-  padding: 3rem;
-}
-
-
-#offer-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-#offer-content ul {
-  list-style: none;
-  padding: 0;
-}
-
-#offer-content li {
-  margin-bottom: 0.5rem;
-}
-
-/* Obrázky */
-#offer-img-1 img,
-#offer-img-2 img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* Obrázky pod sebou */
-#offer-img-2 {
-  display: flex;
-  flex-direction: column;
-  gap: 0rem;
-}
+    /* Mobil: 1 slide na obrazovku */
+    @media (max-width: 768px) {
+      .gallery .slide { width: 100%; margin-right: 0; }
+    }
 
 
 
@@ -182,7 +107,7 @@
   grid-template-rows: repeat(7, auto);
   gap: 20px;
   padding: 20px;
-  max-width: 70vw;
+  max-width: 80vw;
   margin: 60px auto;
 }
 
@@ -197,7 +122,7 @@
 
 
 .item {
-  background: #f4f4f4;
+  background: var(--light-green);
   font-family: "Inter", sans-serif;
   width: 100%;
   height: 100%;

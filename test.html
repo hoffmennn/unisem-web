@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karuselová galéria</title>
+  <style>
+    /* Box-sizing iba pre carousel */
+    .gallery, .gallery * { box-sizing: border-box; }
+
+    /* Obal galérie */
+    .gallery {
+      margin: 0 auto;
+      max-width: 900px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Pole slidov */
+    .gallery .slides {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    /* Jeden slide */
+    .gallery .slide {
+      background-color: #f0fff0;
+      border-radius: 8px;
+      flex-shrink: 0;
+      text-align: center;
+      padding: 10px;
+    }
+    .gallery .slide img {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+    .gallery .slide p {
+      margin: 8px 0 0;
+      font-weight: bold;
+    }
+
+    /* Guľôčky */
+    .gallery .dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .gallery .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #007f00;
+      opacity: 0.3;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .gallery .dot.active { opacity: 1; }
+
+    /* Desktop: 3 slide-ov na obrazovku */
+    @media (min-width: 769px) {
+      .gallery .slide {
+        width: calc((100% - 40px) / 3);
+        margin-right: 20px;
+      }
+      .gallery .slide:last-child { margin-right: 0; }
+    }
+
+    /* Mobil: 1 slide na obrazovku */
+    @media (max-width: 768px) {
+      .gallery .slide { width: 100%; margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery" id="gallery">
+    <div class="slides">
+      <div class="slide"><img src="images/1.jpg" alt="Popis 1"><p>Popis 1</p></div>
+      <div class="slide"><img src="images/2.jpg" alt="Popis 2"><p>Popis 2</p></div>
+      <div class="slide"><img src="images/3.jpg" alt="Popis 3"><p>Popis 3</p></div>
+      <div class="slide"><img src="images/4.jpg" alt="Popis 4"><p>Popis 4</p></div>
+      <div class="slide"><img src="images/5.jpg" alt="Popis 5"><p>Popis 5</p></div>
+    </div>
+    <div class="dots"></div>
+  </div>
+
+  <script>
+    (function() {
+      const gallery = document.getElementById('gallery');
+      const slidesEl = gallery.querySelector('.slides');
+      const slides = Array.from(gallery.querySelectorAll('.slide'));
+      const dotsContainer = gallery.querySelector('.dots');
+
+      let currentIndex = 0;
+
+      function update() {
+        const isMobile = window.innerWidth <= 768;
+        const visibleCount = isMobile ? 1 : 3;
+        const gap = isMobile ? 0 : 20;
+        const slideWidth = slides[0].clientWidth + gap;
+        const maxIndex = slides.length - visibleCount;
+        currentIndex = Math.min(Math.max(currentIndex, 0), maxIndex);
+
+        slidesEl.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+        // Vytvorenie gulôčok
+        dotsContainer.innerHTML = '';
+        const dotsCount = isMobile ? slides.length : slides.length - 2;
+        for (let i = 0; i < dotsCount; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'dot';
+          if (i === currentIndex) dot.classList.add('active');
+          dot.addEventListener('click', () => { currentIndex = i; update(); });
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      window.addEventListener('resize', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
