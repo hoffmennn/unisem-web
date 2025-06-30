@@ -263,8 +263,8 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(15, auto);
   gap: 20px;
-  padding: 20px;
-  max-width: 90vw;
+  padding: 5px;
+  max-width: 95vw;
   margin: 60px auto;
 }
   
