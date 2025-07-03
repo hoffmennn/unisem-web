@@ -210,8 +210,13 @@ h2 {
   background-color: #2da647;
   color: white;
 }
+
 .main-div.active::after {
   background-color: rgba(0, 0, 0, 0.5);
+}
+.main-div.active .main-cta-button {
+  background-color: #2da647;
+  color: white;
 }
 
 /* Mobilné prispôsobenie */

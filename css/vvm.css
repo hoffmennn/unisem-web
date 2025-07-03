@@ -189,7 +189,7 @@ h2 {
 */
 
 .price {
-  background-image: url('/images/tomatos.jpg'); /* nahraď svojím obrázkom */
+  background-image: url('../images/tomatos.jpg'); /* nahraď svojím obrázkom */
   background-attachment: fixed; /* parallax efekt */
   background-size: cover;
   background-position: center;

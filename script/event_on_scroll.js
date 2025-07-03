@@ -8,7 +8,7 @@ if (window.innerWidth <= 768) {
         }
       });
     }, {
-      threshold: 0.4 // 40% viditeľnosti na spustenie
+      threshold: 0.6 // 40% viditeľnosti na spustenie
     });
 
     document.querySelectorAll('.main-div').forEach(section => {
