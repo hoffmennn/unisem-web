@@ -1,69 +1,81 @@
 (function () {
-  const gallery      = document.getElementById('gallery');
-  const slidesEl     = gallery.querySelector('.slides');
-  const slides       = Array.from(gallery.querySelectorAll('.slide'));
+  const gallery       = document.getElementById('gallery');
+  if (!gallery) return;                 // bezpečnostná poistka
+
+  const slidesEl      = gallery.querySelector('.slides');
+  const slides        = Array.from(gallery.querySelectorAll('.slide'));
   const dotsContainer = gallery.querySelector('.dots');
 
-  let currentIndex   = 0;
-  let autoTimer      = null;   // ⬅️  časovač pre auto‑slide
+  let currentIndex = 0;
+  let autoTimer   = null;
 
+  /* ---------- VÝPOČTY PODĽA PLATFORMY ------------------ */
+  function isMobile () { return window.innerWidth <= 768; }
+
+  function visibleCount () { return isMobile() ? 1 : 3; }
+
+  function slideWidth () {
+    const gap = isMobile() ? 0 : 20;
+    return slides[0].clientWidth + gap;
+  }
+
+  function maxIndex () {
+    return slides.length - visibleCount();
+  }
+
+  /* ---------- KRESLENIE ------------------ */
   function update () {
-    const isMobile     = window.innerWidth <= 768;
-    const visibleCount = isMobile ? 1 : 3;
-    const gap          = isMobile ? 0 : 20;
-    const slideWidth   = slides[0].clientWidth + gap;
-    const maxIndex     = slides.length - visibleCount;
+    const vc = visibleCount();
 
-    // normalizuj index
-    currentIndex = Math.min(Math.max(currentIndex, 0), maxIndex);
+    currentIndex = Math.max(0, Math.min(currentIndex, maxIndex()));
 
-    // posuň slides
-    slidesEl.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-
-    // (re)‑vytvor bodky
-    dotsContainer.innerHTML = '';
-    const dotsCount = isMobile ? slides.length : slides.length - visibleCount + 1;
-    for (let i = 0; i < dotsCount; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot';
-      if (i === currentIndex) dot.classList.add('active');
-      dot.addEventListener('click', () => {
-        currentIndex = i;
-        update();
-        restartAutoSlide();      // ak používateľ klikne, reštartuj časovač
+    if (isMobile()) {
+      /* Natívny scroll na mobile */
+      slidesEl.scrollTo({
+        left: currentIndex * slideWidth(),
+        behavior: 'smooth'
       });
-      dotsContainer.appendChild(dot);
+    } else {
+      /* translateX na desktope */
+      slidesEl.style.transform = `translateX(-${currentIndex * slideWidth()}px)`;
+    }
+
+    /* Bodky vytvárame len na desktope */
+    dotsContainer.innerHTML = '';
+    if (!isMobile()) {
+      const dotsCnt = slides.length - vc + 1;
+      for (let i = 0; i < dotsCnt; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          update();
+          restartAuto();              // reštart časovača po manuálnom kliknutí
+        });
+        dotsContainer.appendChild(dot);
+      }
     }
   }
 
-  /* === Automatické posúvanie ========================================== */
-  function startAutoSlide () {
+  /* ---------- AUTO‑SLIDE KAŽDÉ 3 s ------------------ */
+  function startAuto () {
     autoTimer = setInterval(() => {
-      const isMobile     = window.innerWidth <= 768;
-      const visibleCount = isMobile ? 1 : 3;
-      const maxIndex     = slides.length - visibleCount;
-
-      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
-      update();                      // posuň na ďalší „set“ slide‑ov
-    }, 3000);                        // 3 sekundy
+      currentIndex = currentIndex >= maxIndex() ? 0 : currentIndex + 1;
+      update();
+    }, 3000);
   }
 
-  function stopAutoSlide () {
-    if (autoTimer) clearInterval(autoTimer);
-  }
+  function stopAuto ()   { if (autoTimer) clearInterval(autoTimer); }
+  function restartAuto () { stopAuto(); startAuto(); }
 
-  function restartAutoSlide () {
-    stopAutoSlide();
-    startAutoSlide();
-  }
-
-  /* === Reakcia na resize ============================================== */
+  /* ---------- REAKCIE NA RESIZE ------------------ */
   window.addEventListener('resize', () => {
     update();
-    restartAutoSlide();              // prerátaj šírky a reštartuj timer
+    restartAuto();                    // prepočíta šírky & reštartuje timer
   });
 
-  /* === Inicializácia ================================================== */
+  /* ---------- INIT ------------------ */
   update();
-  startAutoSlide();
+  startAuto();
 })();

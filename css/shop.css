@@ -141,7 +141,23 @@
     scroll-snap-align: start;
     flex: 0 0 100%;
   }
+  }
+
+  @media (max-width: 768px) {
+  .gallery .slides::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .gallery .slides::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .gallery .slides::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 3px;
+  }
 }
+
 
 
 
