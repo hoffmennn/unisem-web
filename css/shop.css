@@ -35,20 +35,30 @@
   padding-top: 2rem;
   padding-bottom: 4rem;
   width: 100%;
+  
+  
 }
 
 .carusel-offer h2{
   width: 100%;
-  margin: 0 auto;
-  
+  max-width: 100%;
+  margin: 0rem auto 0.25rem;
+  text-align: center;
 }
+.carusel-offer h4{
+  width: 100%;
+  max-width: 100%;
+  margin: 0rem auto 1.5rem;
+  text-align: center;
+}
+
 
 .gallery, .gallery * { box-sizing: border-box; }
 
     /* Obal galérie */
     .gallery {
       margin: 0 auto;
-      max-width: 900px;
+      max-width: 1200px;
       overflow: hidden;
       position: relative;
     }
@@ -61,27 +71,30 @@
 
     /* Jeden slide */
     .gallery .slide {
-      background-color: var(--green);
-      border-radius: 2px;
+      background-color: var(--white);
+      border-bottom: 3px solid var(--green);
+      border-radius: 5px;
       flex-shrink: 0;
       text-align: center;
-      padding: 0px;
+      padding: 20px;
     }
     .gallery .slide img {
       width: 100%;
-      border-radius: 2px;
+      border-radius: 5px;
       display: block;
+      
     }
     .gallery .slide p {
-      margin: 8px 0 0;
-      font-weight: bold;
+      margin: 1.5rem 0 0;
+      font-size: 1.25rem;
+      color: var(--green);
     }
 
     /* Guľôčky */
     .gallery .dots {
       display: flex;
       justify-content: center;
-      margin-top: 12px;
+      margin-top: 25px;
     }
     .gallery .dot {
       width: 15px;
@@ -100,18 +113,25 @@
       .gallery .slide {
         width: calc((100% - 40px) / 3);
         margin-right: 20px;
+        
       }
+
       .gallery .slide:last-child { margin-right: 0; }
     }
 
     /* Mobil: 1 slide na obrazovku */
     @media (max-width: 768px) {
-      .gallery .slide { width: 100%; margin-right: 0; }
+      .gallery .slide { 
+        width: 100%; 
+        margin-right: 0;
+        border-radius: 0px;
+       }
     }
 
     /* Len na mobiloch */
 @media (max-width: 768px) {
   .gallery .slides {
+    
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
