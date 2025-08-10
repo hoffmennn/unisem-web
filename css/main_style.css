@@ -59,7 +59,7 @@ h2 {
 .hero {
   height: 90vh;
   width: 100%;
-  background-image: url(../images/hero.jpg );
+  background-image: url(../images/home/hero.webp );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -137,8 +137,8 @@ h2 {
   z-index: 0;
 }
 
-.bg-gardencentrum   { --bg-image: url('../images/gardencentrum-hero.jpg'); }
-.bg-vvm             { --bg-image: url('../images/vvm-hero.jpg'); }
+.bg-gardencentrum   { --bg-image: url('../images/home/gardencentrum-hero.webp'); }
+.bg-vvm             { --bg-image: url('../images/home/vvm-hero.webp'); }
 
 /* Hover efekt – iba zväčší obrázok a stmaví */
 .main-div:hover::before {
