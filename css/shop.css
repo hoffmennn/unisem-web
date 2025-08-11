@@ -31,7 +31,7 @@
 */
 
 .carusel-offer{
-  background-color: #edffec;
+  background-color: #ffffff;
   padding-top: 2rem;
   padding-bottom: 4rem;
   width: 100%;
@@ -71,7 +71,7 @@
 
     /* Jeden slide */
     .gallery .slide {
-      background-color: var(--white);
+      background-color: #edffec;
       border-bottom: 3px solid var(--green);
       border-radius: 5px;
       flex-shrink: 0;
