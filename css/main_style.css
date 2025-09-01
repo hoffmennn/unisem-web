@@ -1,65 +1,67 @@
-/* 
---------------- General CSS ---------------
-*/ 
-
-
+/* ================== Global ================== */
 :root {
-    --green: #40a829;
-    --white: #ffffff;
-    --body-white-bg: #f9f9f9;
-    --light-grey: #e7e7e7;
-    --dark-grey: #232323;
+  /* Primárne farby */
+  --clr-primary: #40a829;
+  --clr-accent: #24a64a;
 
+  /* Text */
+  --clr-text: #000000;
+  --clr-text-light: #333;
 
-    --clr-section-bg: #f4f5f6;       /* svetlo-sivé pozadie celej sekcie */
-    --clr-card-bg:    #c9ffca;       /* zelený štvorec */
-    --clr-card-icon:  #a5f4a5;       /* o tón tmavší kruh za ikonou     */
-    --clr-accent:     #24a64a;       /* tlačidlo + ikonky               */
-    --clr-text:       #000000;
+  /* Pozadia */
+  --clr-white: #ffffff;
+  --clr-body-bg: #f8f8f8;
+  --clr-light-grey: #f1efef;
+  --clr-dark-grey: #232323;
+  --clr-section-bg: #f4f5f6;
+  --clr-card-bg: #c9ffca;
+  --clr-card-icon: #a5f4a5;
 
+  /* Ostatné */
+  --overlay-dark: rgba(0, 0, 0, 0.4);
+  --button-bg: rgba(255, 255, 255, 0.2);
+  --button-hover-bg: #3ea867;
+  --button-text: #ffffff;
+  --transition: all 0.4s ease;
+}
 
-    --overlay-dark: rgba(0, 0, 0, 0.4);
-    --button-bg: rgba(255, 255, 255, 0.2);
-    --button-hover-bg: #3ea867;
-    --button-text: white;
-    --transition: all 0.4s ease;
+@font-face {
+  font-family: "Archivo";
+  src: url("../fonts/archivo.woff2") format("woff2"),
+       url("../fonts/archivo.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  color: inherit;        /* zdedí farbu textu z rodiča */
-  text-decoration: none; /* odstráni podčiarknutie */
+  color: inherit;
+  text-decoration: none;
 }
 
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
-    background-color: var(--light-bg);
-    color: #333;
-    padding: 0;
-    margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: var(--clr-light-grey);
+  color: var(--clr-text-light);
 }
 
 h2 {
-  font-size: 2.5rem;     /* mierne väčšie než štandardné */
-  font-weight: 400;      /* normálna váha, nie bold */
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--clr-text-light);
 }
 
-/* 
---------------- Header Section ---------------
-*/ 
-
+/* ================== Header ================== */
 .hero {
   height: 90vh;
   width: 100%;
-  background-image: url(../images/home/hero.webp );
+  background-image: url(../images/home/hero.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -71,44 +73,35 @@ h2 {
   padding: 2rem;
 }
 
-
-
-
 #main_title {
-    text-align: left;
-    font-size: 2.5rem;
-    font-family: "Inter", sans-serif;
-    font-weight: normal;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.701);
-    color: #e4e4e4;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    z-index: 2;
-    color: white;
-    max-width: 700px;
-
-    border-left: 8px solid #f9f9f9;
-    padding-left: 10px;
+  text-align: left;
+  font-size: 2.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  color: white;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 2;
+  max-width: 700px;
+  border-left: 8px solid var(--clr-body-bg);
+  padding-left: 10px;
 }
 
 @media screen and (max-width: 600px) {
-    #main_title {
-        font-size: 1.5rem;
-        left: 40%;
-        top: 50%;
-        padding-left: 5px;
-        border-left: 4px solid #f9f9f9;
-        
-    }
-    
+  #main_title {
+    font-size: 1.5rem;
+    left: 40%;
+    top: 50%;
+    padding-left: 5px;
+    border-left: 4px solid var(--clr-body-bg);
+  }
 }
 
-/*
------------------- Garden centrum / VVM  section --------------------
-*/
+/* ================== Garden centrum / VVM ================== */
 .main-div {
   position: relative;
   overflow: hidden;
@@ -120,10 +113,9 @@ h2 {
   align-items: center;
   padding: 2rem 1.5rem;
   z-index: 0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.421);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.42);
 }
 
-/* Dynamický obrázok cez ::before */
 .main-div::before {
   content: '';
   position: absolute;
@@ -137,16 +129,14 @@ h2 {
   z-index: 0;
 }
 
-.bg-gardencentrum   { --bg-image: url('../images/home/gardencentrum-hero.webp'); }
-.bg-vvm             { --bg-image: url('../images/home/vvm-hero.webp'); }
+.bg-gardencentrum { --bg-image: url('../images/home/gardencentrum-hero.webp'); }
+.bg-vvm           { --bg-image: url('../images/home/vvm-hero.webp'); }
 
-/* Hover efekt – iba zväčší obrázok a stmaví */
 .main-div:hover::before {
   transform: scale(1.05);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Prekrytie tmavého filtra */
 .main-div::after {
   content: '';
   position: absolute;
@@ -159,7 +149,6 @@ h2 {
 .main-div:hover::after {
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 
 .main-container {
   position: relative;
@@ -192,7 +181,6 @@ h2 {
   margin-bottom: 1.5rem;
 }
 
-/* Button */
 .main-cta-button {
   background-color: rgba(255, 255, 255, 0.25);
   color: white;
@@ -206,20 +194,16 @@ h2 {
   width: fit-content;
 }
 
-.main-div:hover .main-cta-button {
-  background-color: #2da647;
+.main-div:hover .main-cta-button,
+.main-div.active .main-cta-button {
+  background-color: var(--clr-accent);
   color: white;
 }
 
 .main-div.active::after {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.main-div.active .main-cta-button {
-  background-color: #2da647;
-  color: white;
-}
 
-/* Mobilné prispôsobenie */
 @media (max-width: 768px) {
   .main-div {
     margin: 1.5rem 1rem;
@@ -231,155 +215,125 @@ h2 {
   }
 }
 
-
-/*
------------------- About us --------------
-*/
-
-
-
-.about-us-section{
-    background: var(--body-white-bg);
-    padding: 2rem 1.5rem;
-    border-radius: 1rem;
-    display: grid;                 
-    grid-template-areas:
-        "title"
-        "text"
-        "icons";
-    gap: 2rem;
-    max-width: 75rem;
-    margin: 1rem auto;                 
+/* ================== About us ================== */
+.about-us-section {
+  background: var(--clr-body-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-areas:
+      "title"
+      "text"
+      "icons";
+  gap: 2rem;
+  max-width: 75rem;
+  margin: 1rem auto;
 }
 
-
-.about-us-section > h2{
-    text-align: center;
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    margin: 0;
+.about-us-section > h2 {
+  text-align: center;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
-
-.about-us-text{
-    grid-area: text;
-    max-width: 32rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    font-size: 1.25rem;
-    
+.about-us-text {
+  grid-area: text;
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 1.25rem;
 }
 
-
-.about-us-text p{
-    margin: 0;
-    line-height: 1.5;
+.about-us-text p {
+  line-height: 1.5;
 }
 
-
-.about-us-text button{
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    background: var(--clr-accent);
-    color: #fff;
-    border: none;
-    padding: .75rem 1.75rem;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: background .2s;
-    max-width: 50%;
-    margin: 0 auto; /* center the button */
-}
-.about-us-text button:hover{
-    background: #1d8d3f; /* o tón tmavší */
+.about-us-text button {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--clr-accent);
+  color: #fff;
+  border: none;
+  padding: .75rem 1.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background .2s;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
-
-
-
-
-.about-us-icons{
-    grid-area: icons;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(8rem, 1fr)); /* vždy 2 stĺpce */
-    gap: 1.5rem 2rem;
+.about-us-text button:hover {
+  background: #1d8d3f;
 }
 
-.about-us-item{
-    position: relative;
-    background: var(--clr-card-bg);
-    border-radius: .75rem;
-    padding: 2.0rem 1.25rem 1.25rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+.about-us-icons {
+  grid-area: icons;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(8rem, 1fr));
+  gap: 1.5rem 2rem;
 }
 
-/*  – veľké číslo */
-.about-us-item .number{
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0 0 .5rem 0;
-    line-height: 1;
+.about-us-item {
+  position: relative;
+  background: var(--clr-card-bg);
+  border-radius: .75rem;
+  padding: 2rem 1.25rem 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
-/*  – text pod číslom */
-.about-us-item .description{
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin: 0;
-    max-width: 10rem;
+.about-us-item .number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  line-height: 1;
 }
 
-/*  – ikona v pravom hornom rohu */
-.about-us-item .icon{
-    position: absolute;
-    top: .75rem;
-    right: .75rem;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: 50%;
-    color: var(--green);
-    background: var(--clr-card-icon);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.about-us-item .description {
+  font-size: 0.95rem;
+  font-weight: 600;
+  max-width: 10rem;
 }
 
-/* vypneme defaultné marginy <p> v ikonách */
+.about-us-item .icon {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  color: var(--clr-primary);
+  background: var(--clr-card-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .about-us-item .icon,
 .about-us-item .number,
-.about-us-item .description{
-    color: var(--clr-text);
+.about-us-item .description {
+  color: var(--clr-text);
 }
 
-/* ===================== */
-/*  Desktop (≥ 768 px)   */
-/* ===================== */
-@media (min-width: 768px){
-    .about-us-section{
-        grid-template-areas:
-            "title  title"
-            "icons  text";
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-    }
+@media (min-width: 768px) {
+  .about-us-section {
+    grid-template-areas:
+        "title  title"
+        "icons  text";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 3.5rem;
+  }
 
-    /* trošku väčší odstup medzi stĺpcami */
-    .about-us-section{
-        column-gap: 3.5rem;
-    }
+  .about-us-icons {
+    justify-self: center;
+  }
 
-    /* ikonové karty naľavo, text napravo */
-    .about-us-icons{
-        justify-self: center;
-    }
-
-    .about-us-text{
-        justify-self: start;
-    }
+  .about-us-text {
+    justify-self: start;
+  }
 }

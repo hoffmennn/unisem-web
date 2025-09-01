@@ -21,6 +21,14 @@ nav a {
     --dark-bg: #0a0a0a;
 }
 
+@font-face {
+  font-family: "Alkia";
+  src: url("../fonts/alkia.woff2") format("woff2"),
+       url("../fonts/alkia.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .static-nav {
   position: absolute;
@@ -90,11 +98,6 @@ nav a {
   left: 0;
 }
 
-
-#nav-header a {
-  font-family: 'Pacifico';
-  font-size: 2rem;
-}
 
 .hamburger {
   display: none;
@@ -208,7 +211,9 @@ nav a {
 }
 
 #nav-header a {
-  font-family: 'Pacifico', cursive;
+  margin-left: 5px;
+  font-family: "Alkia", sans-serif;
+  letter-spacing: 2px; 
   font-size: 2rem;
   line-height: 1;
 }
