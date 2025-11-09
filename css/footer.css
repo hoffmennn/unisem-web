@@ -1,128 +1,183 @@
-:root {
-  --color-bg-dark: #111;
-  --color-text-light: #fff;
-  --color-accent-green: #4caf50;
-  --color-text-grey: #adadad;
-
-}
-
 footer {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-light);
-  padding: 2rem 1rem;
-  font-family: sans-serif;
-}
-
-footer a {
-  color: var(--color-text-light);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: var(--color-accent-green);
-}
-
-footer h3:hover {
-  color: var(--color-accent-green);
-}
-
-footer h3 {
-  color: var(--color-text-grey);
-  margin-bottom: 0.5rem;
-  transition: color 0.3s;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 60px 40px 20px;
+    font-family: Arial, sans-serif;
 }
 
 .socials-nav-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
-.footer-div {
-  flex: 1 1 300px;
+/* Ľavá sekcia - Newsletter */
+.socials.footer-div {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
 }
 
-.socials-container {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
+.socials h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
-.socials-container i {
-  font-size: 2rem;
-  transition: transform 0.3s;
+.socials svg {
+    fill: #ffffff;
 }
 
-.socials-container i:hover {
-  transform: scale(1.2);
-  color: var(--color-accent-green);
+.socials > div h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    display: block;
 }
 
-.navigation {
-  display: flex;
-  gap: 2rem;
-  flex: 4;
-  flex-wrap: wrap;
+.socials > div h4 {
+    font-size: 14px;
+    color: #b0b0b0;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.socials span {
+    display: flex;
+    gap: 10px;
+}
+
+.socials input {
+    flex: 1;
+    padding: 12px 16px;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.socials input::placeholder {
+    color: #666666;
+}
+
+.socials button {
+    padding: 12px 24px;
+    background-color: #00ff00;
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.socials button:hover {
+    background-color: #00cc00;
+}
+
+/* Pravá sekcia - Navigácia */
+.navigation.footer-div {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
 }
 
 .nav-div {
-  flex: 1 1 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+    flex: 1;
+    min-width: 180px;
 }
 
-footer p {
-  margin: 0;
-  font-size: 0.95rem;
+.nav-div h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-footer > br + * {
-  display: block;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1rem;
-  color: #ccc;
+.nav-div a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+}
+
+.nav-div a:hover {
+    color: #00ff00;
+}
+
+.nav-div p {
+    font-size: 14px;
+    color: #b0b0b0;
+    margin: 0;
+    padding: 4px 0;
+}
+
+.nav-div a p:hover {
+    color: #00ff00;
+}
+
+/* Spodná sekcia */
+.footer-socials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #333333;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.copy {
+    font-size: 14px;
+    color: #888888;
+}
+
+.socials-container {
+    display: flex;
+    gap: 15px;
+}
+
+.socials-container a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.socials-container a:hover {
+    color: #00ff00;
+}
+
+/* Responzívny dizajn */
+@media (max-width: 1024px) {
+    .socials-nav-container {
+        flex-direction: column;
+    }
+    
+    .navigation.footer-div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
-  .socials-nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-div {
-    width: 100%;
-    align-items: center;
-  }
-
-  .socials-container {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  footer h3 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .nav-div p {
-    font-size: 0.9rem;
-  }
-
-  .socials-container i {
-    font-size: 1.8rem;
-  }
+    footer {
+        padding: 40px 20px 20px;
+    }
+    
+    .navigation.footer-div {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-socials {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

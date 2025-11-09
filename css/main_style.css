@@ -47,14 +47,18 @@ a {
 body {
   font-family: sans-serif;
   line-height: 1.6;
-  background-color: var(--clr-light-grey);
+  background-color: var(--clr-body-bg);
   color: var(--clr-text-light);
 }
 
 h2 {
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 600;
   color: var(--clr-text-light);
+}
+
+h4 {
+  font-weight: 400;
 }
 
 /* ================== Header ================== */
@@ -217,8 +221,6 @@ h2 {
 
 /* ================== About us ================== */
 .about-us-section {
-  background: var(--clr-body-bg);
-  padding: 2rem 1.5rem;
   border-radius: 1rem;
   display: grid;
   grid-template-areas:
@@ -236,6 +238,8 @@ h2 {
 }
 
 .about-us-text {
+  text-align:justify;
+  text-align-last: left;
   grid-area: text;
   max-width: 32rem;
   display: flex;
@@ -248,7 +252,12 @@ h2 {
   line-height: 1.5;
 }
 
-.about-us-text button {
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+
+.button-container button {
   display: inline-flex;
   align-items: center;
   gap: .5rem;
@@ -258,14 +267,14 @@ h2 {
   padding: .75rem 1.75rem;
   font-weight: 600;
   font-size: 1rem;
-  border-radius: 1rem;
+  border-radius: 2.5rem;
   cursor: pointer;
   transition: background .2s;
   max-width: 50%;
   margin: 0 auto;
 }
 
-.about-us-text button:hover {
+.button-container button:hover {
   background: #1d8d3f;
 }
 
@@ -326,14 +335,17 @@ h2 {
         "icons  text";
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    column-gap: 3.5rem;
+
+    
   }
 
   .about-us-icons {
-    justify-self: center;
+    justify-self: stretch;
+    
   }
 
   .about-us-text {
-    justify-self: start;
+    justify-self: stretch; /* roztiahni aj textovú časť */
+    padding-left: 1rem;
   }
 }

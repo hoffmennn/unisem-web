@@ -58,7 +58,7 @@
     /* Obal galérie */
     .gallery {
       margin: 0 auto;
-      max-width: 1200px;
+      max-width: 1000px;
       overflow: hidden;
       position: relative;
     }
@@ -71,12 +71,12 @@
 
     /* Jeden slide */
     .gallery .slide {
-      background-color: #edffec;
-      border-bottom: 3px solid var(--green);
-      border-radius: 5px;
+      background-color: #238d1e;
+      border-radius: 30px;
       flex-shrink: 0;
       text-align: center;
-      padding: 20px;
+      padding: 0px;
+      overflow: hidden;
     }
     .gallery .slide img {
       width: 100%;
@@ -85,9 +85,10 @@
       
     }
     .gallery .slide p {
-      margin: 1.5rem 0 0;
+      margin: 1rem 0 1rem;
       font-size: 1.25rem;
-      color: var(--green);
+      font-weight: 500;
+      color: var(--white);
     }
 
     /* Guľôčky */
@@ -463,10 +464,10 @@
     padding-left: 4rem;
 }
 
-
+/*
 .border-article {
     border-right: var(--green) 5px solid;
-}
+}*/
 
 #contact-content i {
     font-size: 1.5em;
