@@ -160,6 +160,187 @@
 }
 
 
+/*
+---------------- actual season --------------------
+*/
+.seasonal-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1a8f1a 0%, #2db82d 100%);
+    border-radius: 40px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.seasonal-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.image-container {
+    flex: 0 0 450px;
+    position: relative;
+    z-index: 2;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.seasonal-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.seasonal-image.fade-out {
+    opacity: 0;
+}
+
+.content-container {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.season-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.seasonal-title {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.seasonal-description {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.offer-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.offer-list li {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.offer-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #1a8f1a;
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+    .seasonal-section {
+        flex-direction: column;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .image-container {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .content-container {
+        width: 100%;
+    }
+
+    .seasonal-title {
+        font-size: 2.5rem;
+    }
+
+    .offer-list li {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .seasonal-section {
+        padding: 30px 20px;
+    }
+
+    .image-wrapper {
+        height: 250px;
+    }
+
+    .seasonal-title {
+        font-size: 2rem;
+    }
+
+    .seasonal-description {
+        font-size: 1rem;
+    }
+
+    .offer-list li {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
 
 
 /*

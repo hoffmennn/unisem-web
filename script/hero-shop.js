@@ -1,9 +1,6 @@
 const images = [
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
-    'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=80',
-    'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80',
-    'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=800&q=80'
+    'images/ext2.jpg'
+
 ];
 
 let currentIndex = 0;
