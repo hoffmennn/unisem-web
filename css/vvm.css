@@ -172,16 +172,34 @@ h2 {
 /* Responsivita */
 @media (max-width: 768px) {
   .why-item {
+    /* Tablet: 2 stĺpce */
     flex: 1 1 calc(50% - 1rem);
   }
 }
 
 @media (max-width: 480px) {
   .why-item {
-    flex: 1 1 100%;
+    /* Mobil: Stále vynucujeme 2 stĺpce */
+    flex: 1 1 calc(50% - 0.5rem); 
+    
+    /* DÔLEŽITÉ: Musíme zrušiť alebo zmenšiť pôvodný limit 250px */
+    min-width: 0; 
+  }
+  
+  /* Voliteľné: Zmenšenie medzery na mobiloch, aby sa tam karty lepšie zmestili */
+  .why-container {
+    gap: 0.5rem;
+  }
+  
+  /* Voliteľné: Úprava písma pre malé karty */
+  .why-item h3 {
+    font-size: 1.1rem; /* Menšie písmo nadpisu */
+    bottom: 0.5rem;
+  }
+  .why-item:hover h3 {
+  transform: translate(-50%, -9rem);
   }
 }
-
 
 
 /*
@@ -420,18 +438,41 @@ h2 {
 
 /* Responzívne - na mobile stack pod seba */
 @media (max-width: 768px) {
+  
   .products-container {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    /* Namiesto jedného stĺpca vytvoríme 2 stĺpce */
+    grid-template-columns: repeat(2, 1fr);
+    
+    /* Zmenšíme výšku riadkov na mobile, aby to nebolo príliš vysoké */
+    
+    gap: 0.5rem; /* Menšia medzera na mobile */
   }
 
+  /* Veľký obrázok - bude cez celú šírku (2 stĺpce) */
   .product.large {
-    grid-column: auto;
-    grid-row: auto;
-    height: auto;
+    grid-column: 1 / -1; /* Roztiahne sa od začiatku po koniec gridu */
+  }
+
+  /* Úprava textu pre mobil */
+  .product h4 {
+    font-size: 0.85rem; /* Menšie písmo pre malé dlaždice */
+    padding: 0.4rem;
+    line-height: 1.2;
+  }
+
+  /* Text na veľkom obrázku môže ostať väčší */
+  .product.large h4 {
+    font-size: 1.2rem;
+    padding: 0.8rem;
   }
 }
 
+/* Pre veľmi malé displeje (voliteľné) */
+@media (max-width: 360px) {
+    .products-container {
+        grid-auto-rows: 120px; /* Ešte nižšie dlaždice pre mini displeje */
+    }
+}
 
 .products-list {
   display: grid;

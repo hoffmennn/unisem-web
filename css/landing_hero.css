@@ -68,11 +68,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-left: 1.8rem;
 }
 
 .cta-button {
     padding: 1rem 2.5rem;
-    margin-right: 1.8rem;
+    margin: 1.5rem;
     font-size: 1.1rem;
     font-weight: 600;
     border: none;
@@ -117,6 +118,15 @@
     .hero-content p {
         font-size: 1.2rem;
     }
+
+    .cta-buttons{
+        margin-left: 0;
+    }
+
+    .cta-button{
+        margin: 1rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -159,6 +169,7 @@
     .cta-button {
         padding: 0.9rem 2rem;
         font-size: 1rem;
+        margin: 0.5rem;
     }
 }
 

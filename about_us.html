@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/about_us.css">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
     <script src="script/sticky_nav.js" defer></script>
     <script src="script/static_nav_hamburger.js" defer></script>
@@ -120,21 +122,21 @@
     </nav>
 
     <main>
-
-        <div class="hero" >
-            <div id="hero-content">
-
-                <h1 id="main_title" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-out">
-                <b> Unisem - VVM obchodná </b> <br>
-                O nás <br>
-            </h1>
-
+        <section class="hero">
+            <div class="hero-image"></div>
+            
+            <div class="hero-content">
+                <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Naša história
+                </h1>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    Od roku 1984 prinášame čerstvosť a kvalitu priamo k vám domov
+                </p>
             </div>
+        </section>
 
 
-        </div>
-
-        <section class="history-block">
+        <section class="history-block" data-aos="fade-up" data-aos-duration="1000">
             <div class="history-text">
             <h2>Korene siahajúce do roku 1966</h2>
             <p>Príbeh spoločnosti sa začína ešte pred jej oficiálnym vznikom – v roku <strong>1966</strong>, keď na tomto mieste vznikla <em>banáreň</em>. Išlo o jednu z len <strong>troch banární na západnom Slovensku</strong>, ktoré v tom čase prijímali <strong>banány dovážané z Kanárskych ostrovov</strong>.</p>
@@ -145,7 +147,7 @@
         </section>
 
         <!-- Sekcia 2: Obrázok vľavo, text vpravo -->
-        <section class="history-block reverse">
+        <section class="history-block reverse" data-aos="fade-up" data-aos-duration="1000">
 
             <div class="history-text">
             <h2>Založenie spoločnosti (1994)</h2>
@@ -158,7 +160,7 @@
         </section>
 
         <!-- Sekcia 3: Text vľavo, obrázok vpravo -->
-        <section class="history-block">
+        <section class="history-block" data-aos="fade-up" data-aos-duration="1000">
             <div class="history-text">
             <h2>Rozvoj a diverzifikácia <br> (2000 – súčasnosť)</h2>
             <p>Firma rástla, rozšírila sortiment a otvorila <em>obchod s bytovými doplnkami a záhradkárskymi potrebami</em>, čím doplnila svoje veľkoobchodné aktivity aj o maloobchodný segment pre širokú verejnosť.</p>
@@ -303,7 +305,13 @@
         </div>
 
     </footer>
-     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            mirror: false
+        });
+    </script>
 </body>
 </html>
 
