@@ -93,6 +93,10 @@
   left: 0;
 }
 
+.no-underline a::after{
+  height: 0 !important;
+}
+
 
 .hamburger {
   display: none;
