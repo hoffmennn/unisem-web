@@ -17,11 +17,11 @@
 }
 
 .hero-image-left {
-    background-image: url(../images/home/hero-f.jpg);
+    background-image: url(../images/home/hero-f.webp);
 }
 
 .hero-image-right {
-    background-image: url(../images/home/hero-vvm.jpg);
+    background-image: url(../images/home/hero-vvm.webp);
 }
 
 /* Overlay pre zatmavenie */
