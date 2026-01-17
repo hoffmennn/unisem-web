@@ -399,6 +399,10 @@ h2 {
   margin: 0 auto;
 }
 
+.vvm-products h2 {
+  margin-bottom: 0.1rem;
+}
+
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -409,6 +413,9 @@ h2 {
 .product {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .product img {
@@ -423,17 +430,51 @@ h2 {
   bottom: 0;
   left: 0;
   margin: 0;
-  padding: 0.5rem 1rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  font-size: 1rem;
+  padding: 1rem;
+  padding-top: 2rem;
   width: 100%;
+
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.686) 100%
+  );
 }
+
 
 /* Prvý veľký obrázok */
 .product.large {
   grid-column: span 2;
   grid-row: span 2;
+}
+
+.product.large-height {
+  grid-row: span 2;
+}
+
+.product.large-width {
+  grid-column: span 2;
+}
+
+#show-product-list {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+#show-product-list:hover {
+    color: var(--green);
+}
+
+#vvm-produts-p {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
 }
 
 /* Responzívne - na mobile stack pod seba */
@@ -503,7 +544,7 @@ h2 {
 /* Desktop – rozdelíme do 4 stĺpcov */
 @media (min-width: 992px) {
   .products-list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
 }

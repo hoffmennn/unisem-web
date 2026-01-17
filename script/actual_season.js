@@ -4,7 +4,7 @@
         spring: {
             name: 'Jar',
             title: 'Jar je tu!',
-            description: 'Začína obdobie sadenia a prípravy záhrady. Nájdeš u nás všetko pre prvé práce na záhone aj veľkonočnú výzdobu.',
+            description: 'Začína obdobie sadenia a prípravy záhrady. Nájdete u nás všetko pre prvé práce na záhone aj veľkonočnú výzdobu.',
             offers: [
                 'veľkonočné dekorácie a ozdoby',
                 'sadenice a priesady',
@@ -12,9 +12,8 @@
                 'substráty a hnojivá',
             ],
             images: [
-                'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80',
-                'https://images.unsplash.com/photo-1464146072230-91cabc968266?w=800&q=80',
-                'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80'
+                'images/tomato.png'
+
             ]
         },
         summer: {
