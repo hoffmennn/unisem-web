@@ -1,21 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const toggleTrigger = document.querySelector(".title-block");
-  const productList = document.getElementById("fullList");
+const btn = document.getElementById("show-product-list");
+const list = document.getElementById("fullList");
 
-  toggleTrigger.addEventListener("click", function () {
-    productList.classList.toggle("open");
-
-
-    if (productList.classList.contains("open")) {
-        const offset = -150; // napr. -100px nad začiatok sekcie
-        const top = productList.getBoundingClientRect().top + window.scrollY + offset;
-
-    window.scrollTo({
-        top: top,
-        behavior: "smooth"
-    });
-    }
-
-
-  });
+btn.addEventListener("click", () => {
+  if (list.classList.contains("open")) {
+    list.style.maxHeight = "0px";
+    list.classList.remove("open");
+  } else {
+    list.classList.add("open");
+    list.style.maxHeight = list.scrollHeight + "px";
+  }
 });
