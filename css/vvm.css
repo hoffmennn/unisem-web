@@ -307,6 +307,7 @@ h2 {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .contact-card {
