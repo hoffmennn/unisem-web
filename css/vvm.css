@@ -363,7 +363,6 @@ h2 {
 .card-body p {
     line-height: 1.8;
     color: var(--text-dark);
-    font-size: 0.95rem;
 }
 
 .card-body strong {
@@ -395,7 +394,6 @@ h2 {
 .contact-column p {
     line-height: 1.8;
     color: var(--text-dark);
-    font-size: 0.95rem;
 }
 
 .contact-card-wide .card-header {
@@ -405,12 +403,17 @@ h2 {
 @media (max-width: 968px) {
     .contact-content {
         flex-wrap: wrap;
+        text-align: center;
     }
 
     .contact-card,
     .contact-card-wide {
         max-width: 100%;
         flex: 1 1 calc(50% - 15px);
+    }
+
+    .card-header {
+    justify-content: center;
     }
 }
 
@@ -422,12 +425,16 @@ h2 {
     .contact-content {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
+
+
 
     .contact-card,
     .contact-card-wide {
         max-width: 500px;
         width: 100%;
+        text-align: center;
     }
 
     .contact-columns {
@@ -439,9 +446,6 @@ h2 {
         padding-left: 60px;
     }
 
-    .contact-card-wide .card-header {
-    justify-content: left;
-}
 
 }
 
@@ -464,7 +468,7 @@ h2 {
 
     .card-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
