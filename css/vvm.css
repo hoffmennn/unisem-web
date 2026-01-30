@@ -8,6 +8,7 @@
   --green: #4CAF50; /* môžeš upraviť odtieň podľa potreby */
   --text-color: #333;
   --bg-color: #fff;
+  --white: #ffffff;
 }
 
 h2 {
@@ -285,83 +286,185 @@ h2 {
 /*
 --------------------  contact section --------------------
 */
-
 .contact-section {
-    
     background-color: var(--white);
-    padding: 40px 0 0 0;
     text-align: center;
-    font-family: Arial, sans-serif;
 }
 
-.contact-section h2 {
-    font-size: 2em;
+.contact-header h2 {
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
-.contact-section h4 {
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 30px;
+.contact-subtitle {
+    margin-bottom: 50px;
 }
 
-#contact-content {
-  background: var(--white);
+.contact-content {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    max-width: 65vw;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
-    border-radius: 5px;
 }
 
-#contact-content article {
-    margin: 20px;
-    flex: 1 1 250px;
-    max-width: 300px;
-    border-radius: 0px;
+.contact-card {
+    flex: 1;
+    max-width: 280px;
     text-align: left;
-
 }
 
-#contact-content article h3 {
-    font-size: 1.2em;
-    margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
+.contact-card-wide {
+    flex: 1.5;
+    max-width: 420px;
 }
 
-#contact-content article div {
+.card-header {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.contact-p{
-    padding-left: 4rem;
-}
-
-/*
-.border-article {
-    border-right: var(--green) 5px solid;
-}*/
-
-#contact-content i {
-    font-size: 1.5em;
+.card-header i {
+    font-size: 1.25rem;
     background-color: var(--green);
-    color: white;
-    padding: 10px;
+    color: var(--white);
+    padding: 12px;
     border-radius: 50%;
-    transition: transform 0.3s ease;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
 }
 
-#contact-content i:hover {
+.card-header i:hover {
     transform: scaleX(-1);
-    background-color:  var(--white) ;
-    color:var(--green);
+    background-color: var(--white);
+    color: var(--green);
+    box-shadow: 0 0 0 2px var(--green);
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.card-body {
+    padding-left: 60px;
+}
+
+.card-body p {
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.card-body strong {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.contact-columns {
+    display: flex;
+    gap: 40px;
+    padding-left: 0;
+}
+
+.contact-card-wide .card-body {
+    padding-left: 0;
+}
+
+.contact-column {
+    flex: 1;
+}
+
+.contact-column h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.contact-column p {
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.contact-card-wide .card-header {
+    justify-content: center;
+}
+
+@media (max-width: 968px) {
+    .contact-content {
+        flex-wrap: wrap;
+    }
+
+    .contact-card,
+    .contact-card-wide {
+        max-width: 100%;
+        flex: 1 1 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card,
+    .contact-card-wide {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .contact-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-body {
+        padding-left: 60px;
+    }
+
+    .contact-card-wide .card-header {
+    justify-content: left;
+}
+
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        padding-left: 10px;
+    }
+
+    .contact-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-subtitle {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding-left: 0;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 #map iframe {
@@ -370,24 +473,7 @@ h2 {
     border: none;
 }
 
-/* Responzívne zobrazenie pre menšie zariadenia */
-@media (max-width: 768px) {
-    #contact-content {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    #contact-content article {
-        width: 100%;
-        max-width: none;
-    }
-
-    .border-article {
-    border-right: none;
-    }
-
-
-}
 
 /*
 ---------------- products section ----------------
@@ -488,6 +574,8 @@ h2 {
   .vvm-products {
     margin: 0 0.5rem;
   }
+
+
 
   /* Veľký obrázok - bude cez celú šírku (2 stĺpce) */
   .product.large {
