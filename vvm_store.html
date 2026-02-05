@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/vvm.css">
     <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/vvm_product_gallery.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/4764c8b3cd.js" crossorigin="anonymous"></script>
 
@@ -154,8 +157,8 @@
                     <p class="hero-subtitle">Čerstvé ovocie, zelenina a potraviny 
                     pre hotely, reštaurácie a gastroprevádzky</p>
                     <div class="hero-buttons">
-                        <a href="#vvmProducts" class="btn btn-primary">Objaviť produkty</a>
-                        <a href="#contact-scroll" class="btn btn-secondary">Kontaktujte nás</a>
+                        <a href="#vvmProducts" class="hero-btn hero-btn-primary">Objaviť produkty</a>
+                        <a href="#contact-scroll" class="hero-btn hero-btn-secondary">Kontaktujte nás</a>
                     </div>
                 </div>
                 
@@ -425,33 +428,201 @@
         </section>
 
 
-        <section>
-            <h2>Široká ponuka, pravidelný dovoz</h2>
 
-            <div class="vvm-offer-container">
+        <section class="business-section">
+            <div class="container">
+                <h2>Profesionálne riešenia pre váš podnik</h2>
+                <p class="section-subtitle">Sme kľúčovým dodávateľom čerstvého ovocia a zeleniny. Ponuka je navrhnutá tak, aby vyhovovala špecifickým potrebám rôzných odvetví.</p>
                 
-                <div class="img-container">
-                    <img src="images/apples_cargo.jpg" alt="Rozvoz jabĺk">
+                <div class="row g-4">
+                    <div class="col-lg-6 mobile-order-2">
+                        <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                            <div class="icon-wrapper">
+                                <i class="bi bi-grid-3x3-gap"></i>
+                            </div>
+                            <h4>Galéria produktov</h4>
+                            <div class="images-grid">
+                                <img src="images/vvm/product_gallery/forzen-fuits.jpeg" alt="Ovocie a zelenina">
+                                <img src="images/vvm/product_gallery/frozen_vege_2.jpeg" alt="Čerstvá zelenina">
+                                <img src="images/vvm/product_gallery/fett.jpeg" alt="Potraviny">
+                                <img src="images/vvm/product_gallery/pasta.jpeg" alt="Cestoviny">
+                            </div>
+                            <p class="view-text">Zobraziť galériu produktov</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mobile-order-1">
+                        <div class="business-cards-grid">
+                            <div class="business-card">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                                <h3>Hotely, reštaurácie a gastroprevádzky</h3>
+                                <p>Prémiová kvalita pre špičkovú gastronómiu a náročných šéfkuchárov.</p>
+                            </div>
+
+                            <div class="business-card">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-cart3"></i>
+                                </div>
+                                <h3>Maloobchodné predajne</h3>
+                                <p>Stabilné dodávky a atraktívny sortiment pre vašich koncových zákazníkov.</p>
+                            </div>
+
+                            <div class="business-card">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-people"></i>
+                                </div>
+                                <h3>Sociálne, školské a zdravotnícke zariadenia</h3>
+                                <p>Dôraz na kvalitu pre špeciálne diétne režimy.</p>
+                            </div>
+
+                            <div class="business-card featured">
+                                <div class="icon-wrapper">
+                                    <i class="bi bi-truck"></i>
+                                </div>
+                                <h3>Denný rozvoz k vašim dverám</h3>
+                                <p>Garantujeme čerstvosť vďaka vlastnej logistike. Tovar doručíme každé ráno priamo do vašich skladov.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="offer-content">
-                    
-                    <p>
-                        Prevádzkujeme veľkoobchod s ovocím a zeleninou a zabezpečujeme
-                         pravidelný dovoz až k dverám vášho podniku. <br> <br>
-                         Našimi odberateľmi sú 
-                          reštaurácie, hotely aj menšie gastro prevádzky, ktorým dodávame čerstvé a
-                           kvalitné suroviny každý deň. <br> <br>
-                         Dlhoročné skúsenosti, spoľahlivá logistika a
-                          individuálny prístup sú základom nášho fungovania.
-                    </p>
-
-
-                </div>
-
             </div>
-
         </section>
+
+        <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="galleryModalLabel">
+                            <i class="bi bi-grid-3x3-gap me-2"></i>Galéria produktov
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="category-section">
+                            <h5>Ovocie</h5>
+                            <div class="product-grid">
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=300" alt="Jablká">
+                                    <p>Jablká</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300" alt="Banány">
+                                    <p>Banány</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1547514701-42782101795e?w=300" alt="Pomaranče">
+                                    <p>Pomaranče</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=300" alt="Jahody">
+                                    <p>Jahody</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300" alt="Avokádo">
+                                    <p>Avokádo</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784794?w=300" alt="Mango">
+                                    <p>Mango</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300" alt="Kivi">
+                                    <p>Kivi</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=300" alt="Hrušky">
+                                    <p>Hrušky</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h5>Zelenina</h5>
+                            <div class="product-grid">
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=300" alt="Paradajky">
+                                    <p>Paradajky</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1587049352846-4a222e784794?w=300" alt="Uhorky">
+                                    <p>Uhorky</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1583617969255-154a58c77a39?w=300" alt="Paprika">
+                                    <p>Paprika</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300" alt="Šalát">
+                                    <p>Šalát</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300" alt="Mrkva">
+                                    <p>Mrkva</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1561152892-412c13bb25fd?w=300" alt="Brokolica">
+                                    <p>Brokolica</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1563639134-e48e2c8e2e0e?w=300" alt="Karfiol">
+                                    <p>Karfiol</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=300" alt="Zemiaky">
+                                    <p>Zemiaky</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h5></i>Mliečne produkty</h5>
+                            <div class="product-grid">
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300" alt="Mlieko">
+                                    <p>Mlieko</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=300" alt="Jogurt">
+                                    <p>Jogurt</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=300" alt="Syry">
+                                    <p>Syry</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300" alt="Maslo">
+                                    <p>Maslo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="category-section">
+                            <h5>Potraviny</h5>
+                            <div class="product-grid">
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300" alt="Chlieb">
+                                    <p>Chlieb</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300" alt="Rožky">
+                                    <p>Rožky</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1608198399988-4475a6a7c406?w=300" alt="Bagety">
+                                    <p>Bagety</p>
+                                </div>
+                                <div class="product-item">
+                                    <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=300" alt="Koláče">
+                                    <p>Koláče</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
         <section class="vvm-why-choose">
@@ -503,108 +674,168 @@
 
 
 
-
         <section class="contact-section" id="contact-scroll">
-
             <div class="contact-header">
                 <h2>Kontaktujte nás</h2>
                 <p class="contact-subtitle">VVM obchodná - Veľkoobchod ovocia a zeleniny</p>
             </div>
 
-            <div class="contact-content">
-                <article class="contact-card">
-                    <div class="card-header">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <h3>Fakturačné údaje</h3>
-                    </div>
-                    
-                    <div class="card-body">
-                        <p>
-                            <strong>VVM obchodná s.r.o.</strong><br>
-                            Teplická 2587/56,<br>
-                            921 01 Piešťany<br>
-                            IČO: 47717696<br>
-                            DIČ: 2024069179
-                        </p>
-                    </div>
-                </article>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <article class="info-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h3>Fakturačné údaje</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                <strong>VVM obchodná s.r.o.</strong><br>
+                                Teplická 2587/56,<br>
+                                921 01 Piešťany<br>
+                                IČO: 47717696<br>
+                                DIČ: 2024069179
+                            </p>
+                        </div>
+                    </article>
 
-                <article class="contact-card contact-card-wide">
-                    <div class="card-header">
-                        <i class="fa-solid fa-phone-volume"></i>
-                        <h3>Kontakt</h3>
-                    </div>
-                    
-                    <div class="card-body">
-                        <div class="contact-columns">
-                            <div class="contact-column">
+                    <article class="info-card">
+                        <div class="card-header">
+                            <i class="fa-solid fa-phone-volume"></i>
+                            <h3>Kontakt</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="contact-single">
                                 <h4>Obchodné oddelenie</h4>
                                 <p>
-                                    <strong> <em>Karol Mikloška:</em></strong><br>
-                                    0905 523 528<br>
-                                    <strong><em>Marián Mikloška: </em> </strong><br>
-                                    0905 613 543<br>
-                                    <strong><em>Email:</em> </strong><br>
-                                    unisem@unisem.sk
+                                    <strong><em>Karol Mikloška:</em></strong> 0905 523 528<br>
+                                    <strong><em>Marián Mikloška:</em></strong> 0905 613 543<br>
+                                    <strong><em>Email:</em></strong> unisem@unisem.sk
                                 </p>
-                            </div>
-
-                            <div class="contact-column">
+                                
                                 <h4>Sklad</h4>
                                 <p>
-                                    <strong><em>Pevná linka:</em></strong><br>
-                                    033/ 77 21 431<br>
-                                    <strong><em>Tel. číslo:</em></strong><br>
-                                    +421 940 562 824
+                                    <strong><em>Pevná linka:</em></strong> 033/ 77 21 431<br>
+                                    <strong><em>Tel. číslo:</em></strong> +421 940 562 824
                                 </p>
+                                
+                        
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article class="contact-card">
-                    <div class="card-header">
-                        <i class="fa-regular fa-clock"></i>
-                        <h3>Otváracie hodiny</h3>
-                    </div>
+                    <article class="info-card">
+                        <div class="card-header">
+                            <i class="fa-regular fa-clock"></i>
+                            <h3>Otváracie hodiny</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Po–Pia: 6:30 – 16:30<br>
+                                So: 7:00 – 12:00
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="form-container">
+                    <h2>Napíšte nám</h2>
+                    <p class="form-subtitle">Pre viac informácii a prepočet cenovej ponuky nás kontaktujte tu.</p>
                     
-                    <div class="card-body">
-                        <p>
-                            Po–Pia: 6:30 – 16:30<br>
-                            So: 7:00 – 12:00
-                        </p>
-                    </div>
-                </article>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="47dd0b09-1639-4db5-8809-0e6058f7ab8b">
+                        <input type="hidden" name="subject" value="Správa z webu unisem-vvm.sk">
+                        
+                        <div class="form-group">
+                            <label for="name">Meno a priezvisko</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Vaše meno a priezvisko"
+                                required
+                                minlength="2"
+                                oninvalid="this.setCustomValidity('Prosím, vyplňte vaše meno a priezvisko')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Názov firmy</label>
+                            <input 
+                                type="text" 
+                                id="company" 
+                                name="company" 
+                                placeholder="Názov vašej firmy"
+                                required
+                                minlength="2"
+                                oninvalid="this.setCustomValidity('Prosím, vyplňte názov firmy')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="meno@firma.sk"
+                                required
+                                oninvalid="this.setCustomValidity('Prosím, zadajte platnú e-mailovú adresu')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Tel. č.</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone" 
+                                placeholder="+421 XXX XXX XXX"
+                                required
+                                minlength="9"
+                                oninvalid="this.setCustomValidity('Prosím, zadajte telefónne číslo')"
+                                oninput="this.setCustomValidity('')"
+                            >
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Správa</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                placeholder="Napíšte nám viac detailov..."
+                                rows="5"
+                                required
+                                minlength="10"
+                                oninvalid="this.setCustomValidity('Prosím, napíšte správu (min. 10 znakov)')"
+                                oninput="this.setCustomValidity('')"
+                            ></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            Odoslať správu
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.16699 10H15.8337M15.8337 10L10.0003 4.16666M15.8337 10L10.0003 15.8333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
-
-
 
             <div id="map">
                 <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12204.82985638496!2d17.815839464445823!3d48.59112945439518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b55269500386f%3A0x2a57bcdc8d2e4fa8!2zWsOhaHJhZGvDoXJza2UgcG90cmVieSBVbmlzZW0gUGllxaHFpWFueQ!5e1!3m2!1sen!2ssk!4v1748020339975!5m2!1sen!2ssk"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12204.82985638496!2d17.815839464445823!3d48.59112945439518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476b55269500386f%3A0x2a57bcdc8d2e4fa8!2zWsOhaHJhZGvDoXJza2UgcG90cmVieSBVbmlzZW0gUGllxaHFiWFueQ!5e1!3m2!1sen!2ssk!4v1748020339975!5m2!1sen!2ssk"
+                    width="600" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </section>
-
-
-<!-- Partners section 
-
-        <section class="partners">
-
-            <h2>Naši odoberatelia</h2>
-
-            <div class="partners-container">
-
-
-                <img id="partners-img" src="images/partners.png" alt="">
-  
-
-            </div>
-
-        </section>
--->
-
 
 
         
@@ -696,7 +927,59 @@
         </div>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        const form = document.getElementById('contactForm');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Odosiela sa...';
+            
+            try {
+                const formData = new FormData(form);
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (response.ok) {
+                    showToast('Správa bola úspešne odoslaná!', 'success');
+                    form.reset();
+                } else {
+                    showToast('Chyba pri odosielaní správy. Skúste to prosím neskôr.', 'error');
+                }
+            } catch (error) {
+                showToast('Chyba pri odosielaní správy. Skúste to prosím neskôr.', 'error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+        
+        function showToast(message, type) {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <div class="toast-content">
+                    <i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-circle-exclamation'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+    </script>
 
 </body>
 

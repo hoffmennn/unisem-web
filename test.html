@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profesionálne riešenia pre váš biznis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .business-section {
+            --green: #4CAF50;
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .business-section .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .business-section .section-subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .business-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .business-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .business-card.featured {
+            background: linear-gradient(135deg, var(--green) 0%, #45a049 100%);
+            color: white;
+        }
+
+        .business-card .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: var(--green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .business-card.featured .icon-wrapper {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .business-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .business-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #e0e0e0;
+            height: 100%;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery-card .icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background: var(--green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .gallery-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-card .images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-card .images-grid img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .gallery-card .view-text {
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .modal-header {
+            background: var(--green);
+            color: white;
+            border-radius: 0;
+        }
+
+        .modal-header .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-section h5 {
+            color: var(--green);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--green);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .product-item {
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-item p {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #666;
+        }
+
+        .business-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .business-section .section-title {
+                font-size: 1.8rem;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .mobile-order-1 {
+                order: 1;
+            }
+
+            .mobile-order-2 {
+                order: 2;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="business-section">
+    <div class="container">
+        <h2 class="section-title">Profesionálne riešenia pre váš biznis</h2>
+        <p class="section-subtitle">Sme kľúčovým dodávateľom čerstvého ovocia a zeleniny. Naša infraštruktúra je navrhnutá tak, aby vyhovovala špecifickým potrebám různých odvetví.</p>
+        
+        <div class="row g-4">
+            <div class="col-lg-6 mobile-order-2">
+                <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                    <div class="icon-wrapper">
+                        <i class="bi bi-grid-3x3-gap"></i>
+                    </div>
+                    <h4>Galéria produktov</h4>
+                    <div class="images-grid">
+                        <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400" alt="Ovocie a zelenina">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400" alt="Čerstvá zelenina">
+                        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=400" alt="Ovocie">
+                        <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400" alt="Exotické ovocie">
+                    </div>
+                    <p class="view-text">Zobraziť galériu produktov</p>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mobile-order-1">
+                <div class="business-cards-grid">
+                    <div class="business-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <h3>Hotely, reštaurácie a gastroprevádzky</h3>
+                        <p>Prémiová kvalita pre špičkovú gastronómiu a náročných šéfkuchárov.</p>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-cart3"></i>
+                        </div>
+                        <h3>Maloobchodné predajne</h3>
+                        <p>Stabilné dodávky a atraktívny sortiment pre vašich koncových zákazníkov.</p>
+                    </div>
+
+                    <div class="business-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h3>Sociálne a školské zariadenia</h3>
+                        <p>Dôraz na nutričnú hodnotu a čerstvosť pre zdravý vývoj detí a seniorov.</p>
+                    </div>
+
+                    <div class="business-card featured">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-truck"></i>
+                        </div>
+                        <h3>Denný rozvoz k vašim dverám</h3>
+                        <p>Garantujeme čerstvosť vďaka vlastnej logistike. Tovar doručíme každé ráno priamo do vašich skladov.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="galleryModalLabel">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>Galéria produktov
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="category-section">
+                    <h5><i class="bi bi-apple me-2"></i>Ovocie</h5>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=300" alt="Jablká">
+                            <p>Jablká</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300" alt="Banány">
+                            <p>Banány</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1547514701-42782101795e?w=300" alt="Pomaranče">
+                            <p>Pomaranče</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=300" alt="Jahody">
+                            <p>Jahody</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300" alt="Avokádo">
+                            <p>Avokádo</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784794?w=300" alt="Mango">
+                            <p>Mango</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=300" alt="Kivi">
+                            <p>Kivi</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=300" alt="Hrušky">
+                            <p>Hrušky</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h5><i class="bi bi-flower1 me-2"></i>Zelenina</h5>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=300" alt="Paradajky">
+                            <p>Paradajky</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784794?w=300" alt="Uhorky">
+                            <p>Uhorky</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1583617969255-154a58c77a39?w=300" alt="Paprika">
+                            <p>Paprika</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300" alt="Šalát">
+                            <p>Šalát</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300" alt="Mrkva">
+                            <p>Mrkva</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1561152892-412c13bb25fd?w=300" alt="Brokolica">
+                            <p>Brokolica</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1563639134-e48e2c8e2e0e?w=300" alt="Karfiol">
+                            <p>Karfiol</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1582169296194-e4d644c48063?w=300" alt="Zemiaky">
+                            <p>Zemiaky</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h5><i class="bi bi-egg-fried me-2"></i>Mliečne produkty</h5>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300" alt="Mlieko">
+                            <p>Mlieko</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=300" alt="Jogurt">
+                            <p>Jogurt</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=300" alt="Syry">
+                            <p>Syry</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300" alt="Maslo">
+                            <p>Maslo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-section">
+                    <h5><i class="bi bi-basket me-2"></i>Čerstvé pečivo</h5>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300" alt="Chlieb">
+                            <p>Chlieb</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300" alt="Rožky">
+                            <p>Rožky</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1608198399988-4475a6a7c406?w=300" alt="Bagety">
+                            <p>Bagety</p>
+                        </div>
+                        <div class="product-item">
+                            <img src="https://images.unsplash.com/photo-1586444248902-2f64eddc13df?w=300" alt="Koláče">
+                            <p>Koláče</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
