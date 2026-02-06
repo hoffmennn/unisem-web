@@ -248,3 +248,15 @@
     }
     
 }
+
+/* Zabezpečí, aby celá plocha karty reagovala na klik */
+.gallery-card {
+    position: relative;
+    z-index: 1;
+    -webkit-tap-highlight-color: transparent; /* Odstráni modrý blik pri kliku na mobile */
+}
+
+/* Toto je kľúčové: Vnútorné prvky nebudú blokovať kliknutie na kartu */
+.gallery-card > * {
+    pointer-events: none;
+}
