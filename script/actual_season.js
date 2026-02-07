@@ -3,16 +3,21 @@
     const seasons = {
         spring: {
             name: 'Jar',
-            title: 'Jar je tu!',
-            description: 'Začína obdobie sadenia a prípravy záhrady. Nájdete u nás všetko pre prvé práce na záhone aj veľkonočnú výzdobu.',
+            title: 'Naša jarná ponuka',
+            description: 'Začína jarné a veľkonočné obdobie. Nájdete u nás všetko pre prvé práce na záhone aj veľkonočnú výzdobu.',
             offers: [
-                'veľkonočné dekorácie a ozdoby',
-                'sadenice a priesady',
+                'veľkonočné dekorácie',
+                'bytové doplnky a ozdoby',
                 'záhradnícke náradie',
-                'substráty a hnojivá',
+                'jarné kvety a sadenice',
+                
+                
+
             ],
             images: [
-                'images/tomato.png'
+                'images/shop/seasonal_offer/spring1.webp',
+                'images/shop/seasonal_offer/spring2.webp',
+                'images/shop/seasonal_offer/spring3.webp'
 
             ]
         },
@@ -103,8 +108,8 @@
             currentImageIndex = (currentImageIndex + 1) % seasonImages.length;
             imageElement.src = seasonImages[currentImageIndex];
             imageElement.classList.remove('fade-out');
-        }, 1200);
+        }, 600);
     }
 
-    setInterval(changeImage, 10000);
+    setInterval(changeImage, 4000);
 })();
