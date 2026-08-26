@@ -419,12 +419,15 @@ h2 {
   gap: 2rem;
   margin-top: 2rem;
   max-height: 0;
+  overflow: hidden;
   transition: max-height 0.6s ease, opacity 0.4s ease;
   opacity: 0;
+  pointer-events: none;
 }
 
 .products-list.open {
   opacity: 1;
+  pointer-events: auto;
 }
 .product-column h4 {
   margin-bottom: 0.5rem;
@@ -483,6 +486,71 @@ h2 {
   cursor: pointer;
 }
 
+
+
+/*
+---------------- link to vvm.sk section ----------------
+*/
+
+.link-to-vvm-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.link-to-vvm-img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.link-to-vvm-btn {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  background-color: var(--green);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.link-to-vvm-btn:hover {
+  background-color: #2e7332;
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(58, 145, 63, 0.4);
+}
+
+@media (max-width: 768px) {
+  .link-to-vvm-container {
+    margin: 1.5rem auto;
+    gap: 1rem;
+  }
+
+  .link-to-vvm-btn {
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .link-to-vvm-btn {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.95rem;
+  }
+}
 
 
 /*
